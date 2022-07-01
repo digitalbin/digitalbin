@@ -1,0 +1,1149 @@
+[
+  {
+    "pageType": "contact",
+    "url": "https://www.linkedin.com/in/digitalbin",
+    "slug": "/contact/linkedin",
+    "name": "linkedin",
+    "page": []
+  },
+  {
+    "pageType": "projects",
+    "url": "https://billigprilla.se",
+    "slug": "/projects/billigprilla",
+    "name": "billig prilla",
+    "page": [
+      {
+        "object": "block",
+        "id": "e80156db-9feb-4c59-b82e-d67b9ee82f88",
+        "parent": {
+          "type": "page_id",
+          "page_id": "177cd4c4-1aa6-41c3-9487-5594476a846b"
+        },
+        "created_time": "2022-06-15T13:09:00.000Z",
+        "last_edited_time": "2022-06-15T13:10:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "A website for comparing snus prices online",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "A website for comparing snus prices online",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "92bda316-4101-4ff0-91c9-02f22a209670",
+        "parent": {
+          "type": "page_id",
+          "page_id": "177cd4c4-1aa6-41c3-9487-5594476a846b"
+        },
+        "created_time": "2022-06-15T13:09:00.000Z",
+        "last_edited_time": "2022-06-15T13:09:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "All cool info regarding this website here aight",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "All cool info regarding this website here aight",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "b691300e-1da5-4500-b312-d654cd2703c0",
+        "parent": {
+          "type": "page_id",
+          "page_id": "177cd4c4-1aa6-41c3-9487-5594476a846b"
+        },
+        "created_time": "2022-06-15T13:09:00.000Z",
+        "last_edited_time": "2022-06-15T13:13:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "billigprilla.se",
+                "link": {
+                  "url": "https://billigprilla.se"
+                }
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "billigprilla.se",
+              "href": "https://billigprilla.se"
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "a40cdab2-f3ea-4140-88fc-6dd11cabfac2",
+        "parent": {
+          "type": "page_id",
+          "page_id": "177cd4c4-1aa6-41c3-9487-5594476a846b"
+        },
+        "created_time": "2022-06-15T13:09:00.000Z",
+        "last_edited_time": "2022-06-15T13:09:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [],
+          "color": "default"
+        }
+      }
+    ]
+  },
+  {
+    "pageType": "projects",
+    "url": "https://gronalinjenbryggeri.se",
+    "slug": "/projects/grona-linjen",
+    "name": "gröna linjen",
+    "page": [
+      {
+        "object": "block",
+        "id": "93a1b5b8-2a06-4caa-b196-42ab6155b4d4",
+        "parent": {
+          "type": "page_id",
+          "page_id": "815df10b-b2f1-49b8-aa6e-9c898ec81cf6"
+        },
+        "created_time": "2022-06-15T13:07:00.000Z",
+        "last_edited_time": "2022-06-15T13:08:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "A brewery based in Stockholm",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "A brewery based in Stockholm",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "95fa8c16-df8a-4f0b-b7f8-a3cbd54c8356",
+        "parent": {
+          "type": "page_id",
+          "page_id": "815df10b-b2f1-49b8-aa6e-9c898ec81cf6"
+        },
+        "created_time": "2022-06-15T13:07:00.000Z",
+        "last_edited_time": "2022-06-15T13:08:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "All cool info regarding this website here aight",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "All cool info regarding this website here aight",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "a044ef0e-c0cb-4e47-ba51-74e69529fdab",
+        "parent": {
+          "type": "page_id",
+          "page_id": "815df10b-b2f1-49b8-aa6e-9c898ec81cf6"
+        },
+        "created_time": "2022-06-15T13:07:00.000Z",
+        "last_edited_time": "2022-06-15T13:09:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "gronalinjenbryggeri.se",
+                "link": {
+                  "url": "https://gronalinjenbryggeri.se"
+                }
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "gronalinjenbryggeri.se",
+              "href": "https://gronalinjenbryggeri.se"
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "ef3c3151-f27a-48d1-945d-2dd85983b159",
+        "parent": {
+          "type": "page_id",
+          "page_id": "815df10b-b2f1-49b8-aa6e-9c898ec81cf6"
+        },
+        "created_time": "2022-06-15T13:07:00.000Z",
+        "last_edited_time": "2022-06-15T13:07:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [],
+          "color": "default"
+        }
+      }
+    ]
+  },
+  {
+    "pageType": "experience",
+    "url": null,
+    "slug": "/experience/hyper-island",
+    "name": "hyper island",
+    "page": [
+      {
+        "object": "block",
+        "id": "32175dd8-b4ea-41a1-adfb-bc926a450634",
+        "parent": {
+          "type": "page_id",
+          "page_id": "e5cbb429-1395-442a-9d33-e7de307e0e38"
+        },
+        "created_time": "2022-06-15T12:57:00.000Z",
+        "last_edited_time": "2022-06-15T12:57:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "heading_1",
+        "heading_1": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Hyper Island",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Hyper Island",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "08327679-f798-4950-97a8-1b9450c3c9b7",
+        "parent": {
+          "type": "page_id",
+          "page_id": "e5cbb429-1395-442a-9d33-e7de307e0e38"
+        },
+        "created_time": "2022-06-15T12:57:00.000Z",
+        "last_edited_time": "2022-06-15T12:57:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "2014 - 2016",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "2014 - 2016",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "6d5cfa1f-f2e0-4d52-98f6-fe30421fe4dd",
+        "parent": {
+          "type": "page_id",
+          "page_id": "e5cbb429-1395-442a-9d33-e7de307e0e38"
+        },
+        "created_time": "2022-06-15T12:57:00.000Z",
+        "last_edited_time": "2022-06-24T09:11:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "I went to the digital data strategy-program at Hyper Island in Stockholm. Here I was introduced to web development and have been obsessed with it ever since.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "I went to the digital data strategy-program at Hyper Island in Stockholm. Here I was introduced to web development and have been obsessed with it ever since.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      }
+    ]
+  },
+  {
+    "pageType": "experience",
+    "url": null,
+    "slug": "/experience/weahead",
+    "name": "weahead",
+    "page": [
+      {
+        "object": "block",
+        "id": "01bf90d1-7602-421a-bdfe-21248853d472",
+        "parent": {
+          "type": "page_id",
+          "page_id": "a1feacf6-49e8-4a74-ba83-13f2e59c0ffd"
+        },
+        "created_time": "2022-06-15T12:56:00.000Z",
+        "last_edited_time": "2022-06-15T12:57:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "heading_1",
+        "heading_1": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "WeAhead",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "WeAhead",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "1e248de3-ff1a-462c-b5ce-000dc337a5b5",
+        "parent": {
+          "type": "page_id",
+          "page_id": "a1feacf6-49e8-4a74-ba83-13f2e59c0ffd"
+        },
+        "created_time": "2022-06-15T12:56:00.000Z",
+        "last_edited_time": "2022-06-15T12:57:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "2016 - 2017",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "2016 - 2017",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "4b131802-f268-45fd-bba1-24442e67b4b9",
+        "parent": {
+          "type": "page_id",
+          "page_id": "a1feacf6-49e8-4a74-ba83-13f2e59c0ffd"
+        },
+        "created_time": "2022-06-15T12:56:00.000Z",
+        "last_edited_time": "2022-06-15T12:56:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Here I dove deep into React and advanced web development and learned from some of the best in the business.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Here I dove deep into React and advanced web development and learned from some of the best in the business.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "d1ee3380-a9af-47f2-aee0-a2dd989eb2ad",
+        "parent": {
+          "type": "page_id",
+          "page_id": "a1feacf6-49e8-4a74-ba83-13f2e59c0ffd"
+        },
+        "created_time": "2022-06-15T12:56:00.000Z",
+        "last_edited_time": "2022-06-15T12:56:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [],
+          "color": "default"
+        }
+      }
+    ]
+  },
+  {
+    "pageType": "contact",
+    "url": "https://github.com/digitalbin",
+    "slug": "/contact/github",
+    "name": "github",
+    "page": []
+  },
+  {
+    "pageType": "about",
+    "url": null,
+    "slug": "/about",
+    "name": "about",
+    "page": [
+      {
+        "object": "block",
+        "id": "ce496c20-0b51-4aae-a301-42a4355f3941",
+        "parent": {
+          "type": "page_id",
+          "page_id": "61df7860-8da4-4828-b788-e3c2600e4acb"
+        },
+        "created_time": "2022-06-24T19:23:00.000Z",
+        "last_edited_time": "2022-06-24T19:23:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "heading_1",
+        "heading_1": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "ALBE KINGEN",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "ALBE KINGEN",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "c13a06d5-1c74-42e6-9a13-fc718586f0e1",
+        "parent": {
+          "type": "page_id",
+          "page_id": "61df7860-8da4-4828-b788-e3c2600e4acb"
+        },
+        "created_time": "2022-06-24T19:23:00.000Z",
+        "last_edited_time": "2022-06-24T19:23:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Fett chill dude mannen (;",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Fett chill dude mannen (;",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "1b5b85d9-56bf-4a52-8a0f-e93405d0f19c",
+        "parent": {
+          "type": "page_id",
+          "page_id": "61df7860-8da4-4828-b788-e3c2600e4acb"
+        },
+        "created_time": "2022-06-24T19:23:00.000Z",
+        "last_edited_time": "2022-06-24T19:23:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Ere fucking fest lr (;",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Ere fucking fest lr (;",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "24c4ba45-8f9d-4729-92b6-5c6328408f9b",
+        "parent": {
+          "type": "page_id",
+          "page_id": "61df7860-8da4-4828-b788-e3c2600e4acb"
+        },
+        "created_time": "2022-06-24T19:23:00.000Z",
+        "last_edited_time": "2022-06-24T19:23:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Kommer med hinken dags å festa festen xD",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Kommer med hinken dags å festa festen xD",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      }
+    ]
+  },
+  {
+    "pageType": "projects",
+    "url": "https://digitalbin.github.io/vollie",
+    "slug": "/projects/vollie",
+    "name": "vollie",
+    "page": [
+      {
+        "object": "block",
+        "id": "cf3bd217-0287-42d1-894e-5bacba23c00a",
+        "parent": {
+          "type": "page_id",
+          "page_id": "b0fd713e-2bde-48c8-ae1a-8ca532741079"
+        },
+        "created_time": "2022-06-15T12:58:00.000Z",
+        "last_edited_time": "2022-06-15T12:58:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "A simplified, slim reader for reddit.com",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "A simplified, slim reader for reddit.com",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "b5a2aa3e-66ac-4fab-81d6-a12ee4f1979c",
+        "parent": {
+          "type": "page_id",
+          "page_id": "b0fd713e-2bde-48c8-ae1a-8ca532741079"
+        },
+        "created_time": "2022-06-15T12:59:00.000Z",
+        "last_edited_time": "2022-06-15T12:59:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Some information about this project oh my god its so funny",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Some information about this project oh my god its so funny",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "fd164162-2796-46e0-8de7-080690684d59",
+        "parent": {
+          "type": "page_id",
+          "page_id": "b0fd713e-2bde-48c8-ae1a-8ca532741079"
+        },
+        "created_time": "2022-06-15T12:59:00.000Z",
+        "last_edited_time": "2022-06-15T13:07:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "vollie",
+                "link": {
+                  "url": "https://digitalbin.github.io/vollie"
+                }
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "vollie",
+              "href": "https://digitalbin.github.io/vollie"
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "e4c1bc57-351d-4a06-933a-552144ef2dde",
+        "parent": {
+          "type": "page_id",
+          "page_id": "b0fd713e-2bde-48c8-ae1a-8ca532741079"
+        },
+        "created_time": "2022-06-15T13:07:00.000Z",
+        "last_edited_time": "2022-06-15T13:07:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [],
+          "color": "default"
+        }
+      }
+    ]
+  },
+  {
+    "pageType": "experience",
+    "url": null,
+    "slug": "/experience/hitta",
+    "name": "hitta.se",
+    "page": [
+      {
+        "object": "block",
+        "id": "50a44549-a0ea-4fd1-a358-45a8eaf10373",
+        "parent": {
+          "type": "page_id",
+          "page_id": "ca94eff0-68b6-4501-96c8-77f811fa54b7"
+        },
+        "created_time": "2022-06-15T12:54:00.000Z",
+        "last_edited_time": "2022-06-15T12:56:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "heading_1",
+        "heading_1": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "hitta.se",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "hitta.se",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "0a9e572b-4e3e-4982-97b1-5796a36b31b7",
+        "parent": {
+          "type": "page_id",
+          "page_id": "ca94eff0-68b6-4501-96c8-77f811fa54b7"
+        },
+        "created_time": "2022-06-15T12:56:00.000Z",
+        "last_edited_time": "2022-06-15T12:56:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "2017 - 2020",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "2017 - 2020",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "d58bff79-945f-49f8-babb-506235af18b2",
+        "parent": {
+          "type": "page_id",
+          "page_id": "ca94eff0-68b6-4501-96c8-77f811fa54b7"
+        },
+        "created_time": "2022-06-15T12:56:00.000Z",
+        "last_edited_time": "2022-06-15T12:56:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Migrated Sweden's 3rd biggest site from old legacy code to a Reactjs/Nextjs-stack.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Migrated Sweden's 3rd biggest site from old legacy code to a Reactjs/Nextjs-stack.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "851f7e16-696f-47fa-865c-faf7b05dff77",
+        "parent": {
+          "type": "page_id",
+          "page_id": "ca94eff0-68b6-4501-96c8-77f811fa54b7"
+        },
+        "created_time": "2022-06-15T12:55:00.000Z",
+        "last_edited_time": "2022-06-15T12:55:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [],
+          "color": "default"
+        }
+      }
+    ]
+  }
+]
