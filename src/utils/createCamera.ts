@@ -8,10 +8,11 @@ export default function createScene() {
         0.1,
         1000,
     );
-    console.log(size);
-    
-    // camera.position.z = size/4;
-    camera.position.z = 150;
+
+    camera.up.set(0, 1, 0);
+
+    // camera.position.z = size / 2;
+    // camera.position.z = 150;
     // camera.position.y = 40;
     return camera;
 }

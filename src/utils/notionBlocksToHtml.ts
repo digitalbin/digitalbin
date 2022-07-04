@@ -12,8 +12,8 @@ function getText(textObj: any) {
     };
 }
 
-export default function notionBlocksToHtml(blocks: any) {
-    return blocks
+export default function notionBlocksToHtml(blocks: any, asArray = false) {
+    const htmls = blocks
         .map((block: { type: string; [key: string]: any }) => {
             const { type } = block;
             const { text, url } = getText(block[type]);
@@ -23,6 +23,7 @@ export default function notionBlocksToHtml(blocks: any) {
             const anchor = url && `<a href="${url}" target="_blank">${text}</a>`;
             
             return `<${htmlTag}>${anchor || text}</${htmlTag}>`;
-        })
-        .join('');
+        });
+        if (asArray) return htmls;
+        return htmls.join('');
 }

@@ -1,136 +1,139 @@
 import * as THREE from 'three';
+import Typewriter from 'typewriter-effect/dist/core';
 import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
+import fiveToneTexture from '../assets/fiveTone.jpeg';
 import { Wireframe } from 'three/examples/jsm/lines/Wireframe.js';
 import { LineSegmentsGeometry } from 'three/examples/jsm/lines/LineSegmentsGeometry.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { Text } from 'troika-three-text';
 import { InteractionManager } from 'three.interactive';
 import notionBlocksToHtml from './notionBlocksToHtml';
+import { MeshLine, MeshLineMaterial, MeshLineRaycast } from 'three.meshline';
 import { size } from './constants';
 import paperTexture from '../assets/paper.jpg';
 import font from '../assets/fa-sysfont-c.woff';
-import bakolit from '../assets/bakolit.glb';
+import crt from '../assets/crt.glb';
+import { BufferGeometry, Material, MeshStandardMaterial, MeshToonMaterial, Scene } from 'three';
+import { CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer';
+import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer';
 
 const gray900 = 0x111827;
 
-function createBlock(width = size, height = size, depth = size) {
-    const group = new THREE.Group();
-    const boxGeometry = new THREE.BoxGeometry(width, height, depth);
-    const edgesGeometry = new THREE.EdgesGeometry(boxGeometry);
+const gltfLoader = new GLTFLoader();
+const textureLoader = new THREE.TextureLoader();
+const fiveTone = textureLoader.load(fiveToneTexture);
+fiveTone.minFilter = THREE.NearestFilter;
+fiveTone.magFilter = THREE.NearestFilter;
 
-    const lineGeometry = new LineSegmentsGeometry().fromEdgesGeometry(
-        edgesGeometry,
-    );
-
-    const matLine = new LineMaterial({
-        color: gray900,
-        linewidth: 0.005,
-    });
-
-    const outline = new Wireframe(lineGeometry, matLine);
-    outline.computeLineDistances();
-
-    const planeMaterial = new THREE.MeshLambertMaterial({
-        color: 0xffffff,
-        // color: 0xffffff,
-        // map: new THREE.TextureLoader().load(paperTexture),
-    });
-
-    const planes = new THREE.Mesh(boxGeometry, planeMaterial);
-    outline.name = 'outline';
-    planes.name = 'box';
-    group.add(planes, outline);
-    return group;
-}
-
-function createText(str: string) {
-    const text = new Text();
-    text.text = str;
-    text.fontSize = 8;
-    const popOutAmt = 0; //5;
-    text.depthOffset = -1;
-    text.position.setZ(size / 2 + popOutAmt);
-    text.color = gray900;
-    text.font = font;
-    text.anchorX = 'center';
-    text.anchorY = 'middle';
-    text.sync();
-    return text;
-}
-
-function createTopBar(title: string) {
-    const topBarGroup = new THREE.Group();
-    const height = size / 8;
-    const block = createBlock(undefined, height);
-    const text = createText(title);
-
-    // const closeBtnDepth = 5;
-    // const closeBtnSize = height - closeBtnDepth;
-    // const closeBtn = createBlock(closeBtnSize, closeBtnSize, closeBtnDepth);
-
-    // closeBtn.position.setZ(size / 2)
-    // closeBtn.position.setX(-size / 2 + closeBtnSize)
-    // closeBtn.name = 'close';
-
-    topBarGroup.add(block, text);
-    topBarGroup.position.setY(size / 2 + height / 2);
-    return topBarGroup;
-}
-
-// function createBodyBlock()
-
-export default function createPage(pageData, interactionManager: InteractionManager) {
-    const group = new THREE.Group();
-    const loader = new GLTFLoader();
-    loader.load(bakolit, gltf => {
-        console.log(gltf);
-        group.add(gltf.scene);
-        gltf.scene.children.forEach(child => {
-            child.material = new THREE.MeshLambertMaterial({ color: 0xb4d455 })
+function createMeshGroup() {
+    const meshGroup = new THREE.Group();
+    gltfLoader.load(crt, (glb) => {
+        glb.scene.traverse(_child => {
+            const child = _child as THREE.Mesh<BufferGeometry, MeshToonMaterial | MeshStandardMaterial>;
+            if (child.isMesh) {
+                child.material = new THREE.MeshToonMaterial({
+                    color: child.material.color,
+                    gradientMap: fiveTone,
+                });
+            }
         })
-    })
-    // const topBar = createTopBar(pageData.name);
-    // const closeBtn = topBar.getObjectByName('close');
-    // interactionManager.add(closeBtn);
+        // Needed?
+        glb.scene.scale.set(10, 10, 10);
+        glb.scene.translateX(-2);
+        meshGroup.add(glb.scene);
+    });
 
-    // closeBtn?.addEventListener('mouseover', e => {
-    //     const target = e.target;
-    //     const box = target.getObjectByName('box');
-    //     const depth = box.geometry.parameters.depth + 1;
-    //     e.target.position.setZ(e.target.position.z - depth);
-    // })
-    // closeBtn?.addEventListener('mouseout', e => {
-    //     const target = e.target;
-    //     const box = target.getObjectByName('box');
-    //     const depth = box.geometry.parameters.depth + 1;
-    //     e.target.position.setZ(e.target.position.z + depth);
-    // })
-    
-    // const bodyBlock = createBlock();
-
-    // group.add(
-        // topBar,
-        // bodyBlock,
-        // text
-    // );
-
-
-    return group;
+    return meshGroup;
 }
 
-// export default function createPage(pageData, { scene, cssScene }) {
-//     const group = new THREE.Group();
-//     const diffuseColor = new THREE.Color(0xb4d455); //.setHSL( alpha, 0.5, gamma * 0.5 + 0.1 ).multiplyScalar( 1 - beta * 0.2 );
+function createCSSGroup(pageData) {
+    const cssGroup = new THREE.Group();
 
-//     const geometry = new THREE.BoxGeometry( size, size, size );
+    const element = document.createElement('div');
+    element.classList.add('screen');
 
-//     const material = new THREE.MeshBasicMaterial({
-//         color: 0xffffff,
-//         map: new THREE.TextureLoader().load(paperTexture)
+    const htmlBlocks = notionBlocksToHtml(pageData.page, true);
+    const typewriter = new Typewriter(element, { delay: 20, cursor: '▋' });
+
+    htmlBlocks.forEach((htmlBlock) => {
+        typewriter.typeString('> ').typeString(htmlBlock).typeString('<br />');
+    });
+
+    // typewriter.pauseFor(2500).start();
+
+    const cssItem = new CSS3DObject(element);
+
+    // cssItem.translateZ(40);
+    const s = 0.05;
+    cssGroup.scale.set(s, s, s);
+    cssGroup.add(cssItem);
+    cssGroup.userData.animation = typewriter;
+    return cssGroup;
+}
+
+// function createCSSGroup(pageData) {
+//     const cssGroup = new THREE.Group();
+
+//     const element = document.createElement('div');
+//     element.classList.add('screen');
+//     element.style.perspective = '400px';
+
+//     const skewContainer = document.createElement('div');
+//     skewContainer.classList.add('skewContainer');
+//     element.appendChild(skewContainer);
+
+//     const htmlBlocks = notionBlocksToHtml(pageData.page, true);
+//     const typewriter = new Typewriter(skewContainer, { delay: 20, cursor: '▋' });
+
+//     htmlBlocks.forEach((htmlBlock) => {
+//         typewriter.typeString('> ').typeString(htmlBlock).typeString('<br />');
 //     });
 
-//     const box = new THREE.Mesh(geometry, material);
+//     typewriter.pauseFor(2500).start();
 
-//     group.add(box);
-//     return group;
+//     const cssItem = new CSS2DObject(element);
+
+//     cssGroup.add(cssItem);
+//     return cssGroup;
 // }
+
+export default function createPage(
+    pageData,
+    interactionManager: InteractionManager,
+) {
+
+    const meshGroup = createMeshGroup();
+    const cssGroup = createCSSGroup(pageData);
+
+    const position = new THREE.Vector3(
+        // THREE.MathUtils.randInt(-400, 400),
+        // 0,
+        // 0,
+        THREE.MathUtils.randInt(-300, 300),
+        THREE.MathUtils.randInt(-300, 300),
+        THREE.MathUtils.randInt(-300, 300),
+    );
+    meshGroup.position.copy(position);
+    cssGroup.position.copy(position);
+
+    const rotation = new THREE.Euler(
+        0,
+        THREE.MathUtils.randFloat(
+            THREE.MathUtils.degToRad(0),
+            THREE.MathUtils.degToRad(360),
+        ),
+        0,
+    )
+
+    meshGroup.rotation.copy(rotation);
+    cssGroup.rotation.copy(rotation);
+    cssGroup.rotateY(Math.PI / 2);
+
+    meshGroup.name = pageData.slug;
+    meshGroup.userData = {
+        ...cssGroup.userData,
+        type: 'screen',
+    }
+
+    return [meshGroup, cssGroup];
+}

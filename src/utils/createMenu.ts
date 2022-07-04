@@ -116,11 +116,12 @@ export default function createMenu({
         });
 
         block.addEventListener('click', (e) => {
+            console.log(e);
+
             e.stopPropagation();
             const targetName = e.target.userData.url;
             console.log(e.target.userData);
-            
-            
+
             window.location.hash = targetName;
         });
 

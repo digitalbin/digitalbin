@@ -13,6 +13,9 @@ class Router {
     constructor({ scene, camera }: Config) {
         this.scene = scene;
         this.camera = camera;
+        this.getHash = this.getHash.bind(this);
+        this.onHashChange = this.onHashChange.bind(this);
+
         window.addEventListener('hashchange', this.onHashChange);
     }
 
@@ -26,7 +29,9 @@ class Router {
 
     onHashChange(e: HashChangeEvent) {
         const { oldURL, newURL } = e;
-    
+        
+        const light = this.scene.getObjectByProperty('type', 'DirectionalLight');
+        
         const oldHash = this.getHash(oldURL);
         const newHash = this.getHash(newURL);
     
@@ -65,6 +70,8 @@ class Router {
                 this.camera.position.copy(pos);
     
                 this.camera.lookAt(target.position);
+                // light?.target?.copy(target)
+                // this.camera.updateProjectionMatrix()
             });
     
         const startRotation = this.camera.quaternion.clone();
