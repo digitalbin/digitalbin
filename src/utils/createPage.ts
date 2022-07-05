@@ -25,23 +25,43 @@ const fiveTone = textureLoader.load(fiveToneTexture);
 fiveTone.minFilter = THREE.NearestFilter;
 fiveTone.magFilter = THREE.NearestFilter;
 
+const glb = await gltfLoader.loadAsync(crt);
+
+glb.scene.traverse(_child => {
+    const child = _child as THREE.Mesh<BufferGeometry, MeshToonMaterial | MeshStandardMaterial>;
+    if (child.isMesh) {
+        child.material = new THREE.MeshToonMaterial({
+            color: child.material.color,
+            gradientMap: fiveTone,
+        });
+    }
+})
+
+glb.scene.scale.set(10, 10, 10);
+glb.scene.translateX(-2);
+
+
 function createMeshGroup() {
     const meshGroup = new THREE.Group();
-    gltfLoader.load(crt, (glb) => {
-        glb.scene.traverse(_child => {
-            const child = _child as THREE.Mesh<BufferGeometry, MeshToonMaterial | MeshStandardMaterial>;
-            if (child.isMesh) {
-                child.material = new THREE.MeshToonMaterial({
-                    color: child.material.color,
-                    gradientMap: fiveTone,
-                });
-            }
-        })
-        // Needed?
-        glb.scene.scale.set(10, 10, 10);
-        glb.scene.translateX(-2);
-        meshGroup.add(glb.scene);
-    });
+    const instance = glb.scene.clone();
+    meshGroup.add(instance);
+    // gltfLoader.load(crt, (glb) => {
+    //     console.log('loads');
+        
+    //     glb.scene.traverse(_child => {
+    //         const child = _child as THREE.Mesh<BufferGeometry, MeshToonMaterial | MeshStandardMaterial>;
+    //         if (child.isMesh) {
+    //             child.material = new THREE.MeshToonMaterial({
+    //                 color: child.material.color,
+    //                 gradientMap: fiveTone,
+    //             });
+    //         }
+    //     })
+    //     // Needed?
+    //     glb.scene.scale.set(10, 10, 10);
+    //     glb.scene.translateX(-2);
+    //     meshGroup.add(glb.scene);
+    // });
 
     return meshGroup;
 }

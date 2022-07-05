@@ -51,7 +51,7 @@ const interactionManager = new InteractionManager(
 // const menuItems = []
 
 const pageItems = pages
-    .slice(1, 2)
+    // .slice(1, 2)
     .map(async (pageData) => {
         const { slug } = pageData;
         const pathDepth = slug.split('/').filter(Boolean).length;
