@@ -13,6 +13,7 @@ import { size } from './constants';
 import paperTexture from '../assets/paper.jpg';
 import font from '../assets/fa-sysfont-c.woff';
 import crt from '../assets/crt.glb';
+import box from '../assets/box.glb';
 import { BufferGeometry, Material, MeshStandardMaterial, MeshToonMaterial, Scene } from 'three';
 import { CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer';
 import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer';
@@ -25,7 +26,13 @@ const fiveTone = textureLoader.load(fiveToneTexture);
 fiveTone.minFilter = THREE.NearestFilter;
 fiveTone.magFilter = THREE.NearestFilter;
 
-const glb = await gltfLoader.loadAsync(crt);
+const glb = await gltfLoader.loadAsync(box);
+// console.log(glb);
+
+const mixer = new THREE.AnimationMixer(glb.scene);
+const animation = mixer.clipAction(glb.animations[0]);
+animation.clampWhenFinished = true;
+animation.loop = THREE.LoopRepeat;
 
 glb.scene.traverse(_child => {
     const child = _child as THREE.Mesh<BufferGeometry, MeshToonMaterial | MeshStandardMaterial>;
@@ -45,23 +52,6 @@ function createMeshGroup() {
     const meshGroup = new THREE.Group();
     const instance = glb.scene.clone();
     meshGroup.add(instance);
-    // gltfLoader.load(crt, (glb) => {
-    //     console.log('loads');
-        
-    //     glb.scene.traverse(_child => {
-    //         const child = _child as THREE.Mesh<BufferGeometry, MeshToonMaterial | MeshStandardMaterial>;
-    //         if (child.isMesh) {
-    //             child.material = new THREE.MeshToonMaterial({
-    //                 color: child.material.color,
-    //                 gradientMap: fiveTone,
-    //             });
-    //         }
-    //     })
-    //     // Needed?
-    //     glb.scene.scale.set(10, 10, 10);
-    //     glb.scene.translateX(-2);
-    //     meshGroup.add(glb.scene);
-    // });
 
     return meshGroup;
 }
@@ -86,7 +76,7 @@ function createCSSGroup(pageData) {
     // cssItem.translateZ(40);
     const s = 0.05;
     cssGroup.scale.set(s, s, s);
-    cssGroup.add(cssItem);
+    // cssGroup.add(cssItem);
     cssGroup.userData.animation = typewriter;
     return cssGroup;
 }
@@ -133,7 +123,8 @@ export default function createPage(
         THREE.MathUtils.randInt(-300, 300),
         THREE.MathUtils.randInt(-300, 300),
     );
-    meshGroup.position.copy(position);
+    // meshGroup.position.copy(position);
+    meshGroup.position.setZ(-20);
     cssGroup.position.copy(position);
 
     const rotation = new THREE.Euler(
@@ -145,14 +136,17 @@ export default function createPage(
         0,
     )
 
-    meshGroup.rotation.copy(rotation);
+    // meshGroup.rotation.copy(rotation);
     cssGroup.rotation.copy(rotation);
     cssGroup.rotateY(Math.PI / 2);
+    animation.play();
 
     meshGroup.name = pageData.slug;
     meshGroup.userData = {
         ...cssGroup.userData,
         type: 'screen',
+        mixer,
+        animation
     }
 
     return [meshGroup, cssGroup];

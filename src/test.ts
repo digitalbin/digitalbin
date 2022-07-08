@@ -13,6 +13,8 @@ import {
     animate,
     createPage,
 } from './utils';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import box from './assets/box.glb';
 
 CameraControls.install({ THREE });
 
@@ -60,7 +62,7 @@ light.name = 'light';
 
 scene.add(
     light,
-    // lights
+    lights
 );
 
 const objects = Array(10)
@@ -93,18 +95,43 @@ const objects = Array(10)
         return obj;
     });
 
+const gltfLoader = new GLTFLoader();
+const glb = await gltfLoader.loadAsync(box);
+const _box = glb.scene;
+
+interactionManager.add(_box)
+scene.add(_box);
+const mixer = new THREE.AnimationMixer(glb.scene);
+const action = mixer.clipAction( glb.animations[0] );
+action.clampWhenFinished = true;
+action.loop = THREE.LoopOnce;
+// action.play();
+console.log(action);
+
+document.querySelector('#app')?.remove();
+
+_box.addEventListener('mouseover', e => {
+    action.play();
+    action.reset()
+})
+
+_box.addEventListener('mouseout', e => {
+    action.fadeOut(action.time)
+})
+
+
 animate((_delta) => {
     const delta = clock.getDelta();
     const hasControlsUpdated = cameraControls.update(delta);
+    mixer.update(delta);
     // controls.update();
-    // interactionManager.update();
+    interactionManager.update();
     // TWEEN.update();
     // light.position.copy(camera.position);
     // light.rotation.copy(camera.rotation);
-    if (hasControlsUpdated) {
+    // if (hasControlsUpdated) {
         renderer.render(scene, camera);
-
-    }
+    // }
     // effect.render(scene, camera);
 });
 
@@ -138,7 +165,7 @@ async function fly() {
 window.addEventListener('keydown', async (e) => {
     const { code } = e;
     if (code !== 'Space') return;
-    fly()
+    // fly()
 });
 
 // fly()
