@@ -2,7 +2,7 @@ import { Scene, Object3D } from 'three';
 
 class Router {
     scene: Scene;
-    declare currentlyInserted: Object3D | undefined;
+    currentlyInserted: Object3D | undefined;
 
     constructor(scene: Scene) {
         this.scene = scene;

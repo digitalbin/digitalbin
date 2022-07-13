@@ -2,7 +2,6 @@ import './style.css';
 import pages from '../data/pages.json';
 import * as THREE from 'three';
 import { gsap } from 'gsap';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { InteractionManager } from 'three.interactive';
 import { animate, getSize } from './utils';
 import {
@@ -11,12 +10,13 @@ import {
     Scene,
     Camera,
     CameraControls,
+    GLTFItem,
     Floor,
-    Sticker,
     TVSet,
+    VHSTape,
 } from './lib';
-// @ts-expect-error
-import AllModels from './assets/vhs_vcr_crt.glb';
+
+await GLTFItem.initialize();
 
 const renderer = new Renderer();
 const scene = new Scene();
@@ -36,53 +36,23 @@ const interactionManager = new InteractionManager(
     false,
 );
 
-const helper = new THREE.PointLightHelper(pointLight, 1, 0x000000);
-scene.add(helper);
+// const helper = new THREE.PointLightHelper(pointLight, 1, 0x000000);
+// scene.add(helper);
 
 const floor = new Floor();
 scene.add(floor);
 
-const loader = new GLTFLoader();
-const gltf = await loader.loadAsync(AllModels);
-const _gltf = await loader.loadAsync(AllModels);
-
-const tvSet = new TVSet(_gltf);
-
+const tvSet = new TVSet();
 tvSet.backButton.addEventListener('click', () => router.goTo('/'));
 interactionManager.add(tvSet.backButton);
-
 scene.add(tvSet);
-
-const objects = ['VHS', 'VCR', 'BACK', 'EJECT', 'CRT'];
-const [_vhs, vcr, back, eject, crt] = objects.map((key) => {
-    const model = gltf.scene.getObjectByName(key) as THREE.Object3D;
-    model.userData.size = getSize(model);
-    return model;
-});
 
 const tapes = new THREE.Group();
 
-pages.forEach((pageItem, i) => {
-    const { name, slug } = pageItem;
-    const vhs = _vhs.clone(true);
-
-    vhs.name = slug;
-    vhs.userData.slug = slug;
-    vhs.userData.active = false;
-    vhs.userData.position = new THREE.Vector3();
-    vhs.getWorldPosition(vhs.userData.position);
-    tapes.attach(vhs);
+pages.forEach((pageItem) => {
+    const vhs = new VHSTape(pageItem);
     interactionManager.add(vhs);
-
-    vhs.position.setY(i * vhs.userData.size.y);
-    const rotationOffset = THREE.MathUtils.randFloat(
-        THREE.MathUtils.degToRad(-30),
-        THREE.MathUtils.degToRad(30),
-    );
-    vhs.rotateY(rotationOffset);
-
-    const sticker = new Sticker(name, vhs.userData.size);
-    vhs.add(sticker);
+    tapes.attach(vhs);
 
     const viaPos = new THREE.Vector3().setY(tvSet.vcr.userData.position.y);
     const endPos = tvSet.vcr.userData.position.clone();
@@ -105,7 +75,7 @@ pages.forEach((pageItem, i) => {
             },
         })
         .to(vhs.position, { ...viaPos })
-        .to(vhs.rotation, { y: rotationOffset > 0 ? Math.PI : 0 })
+        .to(vhs.rotation, { y: vhs.rotationOffset > 0 ? Math.PI : 0 })
         .to(vhs.position, endPos, '<');
 
     vhs.userData.animations = {
@@ -118,7 +88,7 @@ pages.forEach((pageItem, i) => {
 
     function onClick(e: any) {
         e.stopPropagation();
-        router.goTo(slug);
+        router.goTo(pageItem.slug);
     }
 
     const hoverAnimation = gsap.to(vhs.position, {
@@ -140,7 +110,7 @@ pages.forEach((pageItem, i) => {
 });
 
 tapes.userData.size = getSize(tapes);
-tapes.position.setY(_vhs.userData.size.y / 2);
+tapes.position.setY(tapes.children[0].userData.size.y / 2);
 tapes.position.setZ(-10);
 scene.add(tapes);
 
