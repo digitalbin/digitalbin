@@ -1,34 +1,39 @@
-import * as THREE from 'three';
-import * as TWEEN from '@tweenjs/tween.js';
-import type CameraControls from './CameraControls';
-
-interface Config {
-    scene: THREE.Scene;
-    camera: THREE.Camera;
-}
-
-interface INavigate {
-    target: THREE.Object3D;
-}
+import { Scene, Object3D } from 'three';
 
 class Router {
-    cameraControls: CameraControls;
+    scene: Scene;
+    declare currentlyInserted: Object3D | undefined;
 
-    constructor(cameraControls: CameraControls) {
-        this.cameraControls = cameraControls;
+    constructor(scene: Scene) {
+        this.scene = scene;
 
-        this.onPathChange = this.onPathChange.bind(this);
-        window.onpopstate = this.onPathChange;
+        window.addEventListener('popstate', this.goToCurent.bind(this))
     }
 
-    navigate(path: string, data: INavigate) {
+    private navigate(path: string) {
         window.history.pushState({}, '', path);
-        data.target.position.setZ(-10);
-        // this.cameraControls.navigateTo(data.target);
     }
 
-    onPathChange(e) {
-        console.log(e);
+    private goToCurent() {
+        const path = window.location.pathname;
+        this.goTo(path, false);
+    }
+
+    public goTo(path: string, navigate = true) {
+        const targetVhs = this.scene.getObjectByName(path);
+        
+        if (this.currentlyInserted?.id !== targetVhs?.id) {
+            this.currentlyInserted?.userData.animations.onDeSelect();
+        }
+        targetVhs?.userData.animations.onSelect();
+
+        this.currentlyInserted = targetVhs;
+
+        if (navigate) this.navigate(path);
+    }
+
+    public init() {
+        this.goToCurent();
     }
 }
 

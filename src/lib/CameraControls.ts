@@ -2,31 +2,20 @@ import _CameraControls from 'camera-controls';
 import * as THREE from 'three';
 
 _CameraControls.install({ THREE });
-
-const degreeOffsetMap: { [key: string]: number } = {
-    screen: THREE.MathUtils.degToRad(45),
-    // screen: THREE.MathUtils.degToRad(90),
-};
-
-// interface I3DObj extends THREE.Object3D {
-//     userData: {
-//         type: string;
-//         animation: any;
-//     };
-// }
-
 export default class CameraControls extends _CameraControls {
     constructor(camera: THREE.PerspectiveCamera, renderer: THREE.Renderer) {
         super(camera, renderer.domElement);
         this.setPosition(0, 10, 10);
         this.setTarget(0, 0, 0);
         this.updateCameraUp();
-        this.dampingFactor = 0.1;
+
+        this.dampingFactor = 0.07;
         // this.enabled = false;
     }
     async navigateTo(target: THREE.Object3D) {
-        const { type = '' } = target.userData;
-        const degreeOffset = degreeOffsetMap[type] || 0;
+        this.setPosition(0, 10, 10, true);
+
+        await this.setTarget(0, 0, 0, true);
 
         await this.setTarget(
             target.position.x,
@@ -34,15 +23,12 @@ export default class CameraControls extends _CameraControls {
             target.position.z,
             true,
         );
-        
-        await Promise.all([
-            this.fitToBox(target, true),
-            this.rotateAzimuthTo(this.azimuthAngle + degreeOffset, true)
-            // this.rotateTo(
-            //     target.rotation.y + degreeOffset,
-            //     THREE.MathUtils.degToRad(90),
-            //     true,
-            // ),
-        ]);
+
+        this.fitToBox(target, true, {
+            paddingTop: 1,
+            paddingBottom: 1,
+            paddingLeft: 1,
+            paddingRight: 1,
+        });
     }
 }
