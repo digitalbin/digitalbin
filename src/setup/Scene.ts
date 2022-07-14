@@ -5,5 +5,4 @@ export default class Scene extends _Scene {
         super();
         this.background = new Color(0xffffff);
     }
-
 }

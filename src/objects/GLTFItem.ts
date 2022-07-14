@@ -1,8 +1,8 @@
 import { Group } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { getSize } from '../utils';
+import { getSize } from '@/utils';
 // @ts-expect-error
-import AllModels from '../assets/vhs_vcr_crt.glb';
+import GLB from '@/assets/vhs_vcr_crt.glb';
 
 export default class GLTFItem extends Group {
     static #model: Group;
@@ -23,18 +23,14 @@ export default class GLTFItem extends Group {
         return object || console.warn('No model with that key: ', key);
     }
 
-    static async initialize() {
+    static async init() {
         if (!GLTFItem.#model) {
-            console.log('loading model');
-            
             const loader = new GLTFLoader();
-            const gltf = await loader.loadAsync(AllModels);
+            const gltf = await loader.loadAsync(GLB);
             gltf.scene.traverse(child => {
                 child.userData.size = getSize(child);
             });
             GLTFItem.#model = gltf.scene;
-
-            console.log('done loading model');
         }
     }
 }

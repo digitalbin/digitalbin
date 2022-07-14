@@ -1,40 +1,45 @@
-import { Scene, Object3D } from 'three';
+import type { CameraControls } from '@/setup';
+import type { Scene, Object3D } from 'three';
 
 class Router {
-    scene: Scene;
-    currentlyInserted: Object3D | undefined;
+    static #scene: Scene;
+    static #cameraControls: CameraControls;
+    currentTarget: Object3D | undefined;
 
-    constructor(scene: Scene) {
-        this.scene = scene;
-
-        window.addEventListener('popstate', this.goToCurent.bind(this))
+    constructor() {
+        if (!window.onpopstate) window.onpopstate = this.handleCurrentPath;
     }
 
-    private navigate(path: string) {
-        window.history.pushState({}, '', path);
-    }
-
-    private goToCurent() {
-        const path = window.location.pathname;
-        this.goTo(path, false);
-    }
-
-    public goTo(path: string, navigate = true) {
-        const targetVhs = this.scene.getObjectByName(path);
+    #handleAnimation = (path: string) => {
+        const newTarget = this.#getTargetObject(path);
+        if (!newTarget) return; // HANDLE 404 OR SOME SHIT
         
-        if (this.currentlyInserted?.id !== targetVhs?.id) {
-            this.currentlyInserted?.userData.animations.onDeSelect();
-        }
-        targetVhs?.userData.animations.onSelect();
+        Router.#cameraControls.navigateTo(newTarget.userData?.viewTarget || newTarget);
+        newTarget.userData.animation?.play();
+        this.currentTarget?.userData.animation?.reverse();
+        
+        this.currentTarget = newTarget;
+    };
 
-        this.currentlyInserted = targetVhs;
+    #getTargetObject = (name: string) => {
+        return Router.#scene.getObjectByName(name);
+    };
 
-        if (navigate) this.navigate(path);
-    }
+    handleCurrentPath = () => {        
+        const path = window.location.pathname;
+        this.#handleAnimation(path);
+    };
 
-    public init() {
-        this.goToCurent();
+    goTo = (path: string) => {
+        window.history.pushState({}, '', path);
+        this.#handleAnimation(path);
+    };
+
+    init(scene: Scene, cameraControls: CameraControls) {
+        Router.#scene = scene;
+        Router.#cameraControls = cameraControls;
     }
 }
 
-export default Router;
+const router = new Router();
+export default router;

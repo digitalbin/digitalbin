@@ -1,4 +1,6 @@
+// @ts-expect-error
 import { Text as TroikaText } from 'troika-three-text';
+
 
 const fonts = [
     'https://fonts.gstatic.com/s/rocksalt/v18/MwQ0bhv11fWD6QsAVOZbsw.woff',
@@ -7,6 +9,14 @@ const fonts = [
 ];
 
 export default class Text extends TroikaText {
+    text: string;
+    font: string;
+    fontSize: number;
+    anchorX: string;
+    anchorY: string;
+    depthOffset: number;
+    color: number;
+
     constructor(text: string, size: number) {
         super();
         this.text = text;
@@ -15,9 +25,7 @@ export default class Text extends TroikaText {
         this.anchorX = 'center';
         this.anchorY = 'middle';
         this.depthOffset = -1;
-        // this.position.copy(label.position);
         this.color = 0x111827;
     }
 }
 
-// const text = new Text();
