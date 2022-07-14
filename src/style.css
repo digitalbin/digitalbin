@@ -36,7 +36,7 @@ canvas#three, div#app {
 }
 
 div#app {
-  @apply z-10;
+  @apply z-10 pointer-events-none;
 }
 
 article {

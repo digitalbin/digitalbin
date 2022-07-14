@@ -1,6 +1,6 @@
 import { WebGLRenderer } from 'three';
 
-const canvas = document.querySelector('#three') || undefined;
+const canvas = document.querySelector('#three') as HTMLCanvasElement;
 
 export default class Renderer extends WebGLRenderer {
     constructor() {

@@ -1,14 +1,18 @@
 import '@/style.css';
 import pages from '../data/pages.json';
 import * as THREE from 'three';
+import { CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer';
 import { gsap } from 'gsap';
 import { InteractionManager } from 'three.interactive';
 import { router, animate } from '@/lib';
-import { Renderer, Scene, Camera, CameraControls } from '@/setup';
+import { Renderer, CSS3DRenderer, Scene, Camera, CameraControls } from '@/setup';
 import { GLTFItem, Floor, TVSet, VHSTape } from '@/objects';
 
 const renderer = new Renderer();
+const css3Drenderer = new CSS3DRenderer();
 const scene = new Scene();
+const cssScene = new Scene();
+// .background = null;
 const camera = new Camera();
 const cameraControls = new CameraControls(camera, renderer);
 const clock = new THREE.Clock();
@@ -75,25 +79,30 @@ pages.forEach((pageItem) => {
 tapes.position.setY(tapes.children[0].userData.size.y / 2);
 tapes.position.setZ(-10);
 tapes.name = '/';
-
 scene.add(tapes);
+
+const element = document.createElement( 'div' );
+element.style.width = '100px';
+element.style.height = '100px';
+element.style.background = new THREE.Color( Math.random() * 0xffffff ).getStyle();
+
+const object = new CSS3DObject( element );
+object.position.copy(tvSet.position)
+object.rotation.copy(tvSet.rotation);
+object.scale.set(.1, .1, .1)
+// object.rotation.x = Math.random();
+// object.rotation.y = Math.random();
+// object.rotation.z = Math.random();
+// object.scale.x = Math.random() + 0.5;
+// object.scale.y = Math.random() + 0.5;
+cssScene.add( object );
 
 animate((_delta) => {
     const delta = clock.getDelta();
     cameraControls.update(delta);
     interactionManager.update();
     renderer.render(scene, camera);
+    css3Drenderer.render(cssScene, camera);
 });
 
 router.handleCurrentPath();
-// if (window.location.pathname === '/') cameraControls.navigateTo(tapes);
-
-// window.addEventListener('keydown', async (e) => {
-//     const { code } = e;
-//     if (code !== 'Space') return;
-
-//     const target = null;
-//     if (target) {
-//         await cameraControls.navigateTo(target);
-//     }
-// });
