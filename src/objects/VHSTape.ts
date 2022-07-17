@@ -2,10 +2,15 @@ import gsap from 'gsap';
 import { MathUtils } from 'three';
 import { GLTFItem, Sticker } from '@/objects';
 import { router } from '@/lib';
+import { notionBlocksToHtml } from '@/utils';
+import TypeIt from 'typeit';
 
 interface PageItem {
     name: string;
     slug: string;
+    page: [];
+    pageType: string;
+    url: string;
 }
 
 export default class VHSTape extends GLTFItem {
@@ -13,7 +18,7 @@ export default class VHSTape extends GLTFItem {
     rotationOffset: number;
     hoverAnimation: gsap.core.Tween;
 
-    constructor({ name, slug }: PageItem) {
+    constructor({ name, slug, page, pageType, url }: PageItem) {
         super('VHS');
         VHSTape.#index++;
 
@@ -21,6 +26,35 @@ export default class VHSTape extends GLTFItem {
         this.userData = {
             ...this.userData,
             active: false,
+        };
+        
+        const screen = document.querySelector('div.screen') as HTMLDivElement;
+
+        const elm = document.createElement('article');
+        elm.classList.add('crt');
+        elm.style.display = 'none';
+        elm.innerHTML = notionBlocksToHtml(page);
+
+        screen.appendChild(elm);
+
+        const typeIt = new (TypeIt as any)(elm, {
+            lifeLike: false,
+            speed: 10,
+            startDelay: 0,
+            cursorChar: '<span style="padding-left: .3rem">▊</span>',
+        });
+        
+        this.userData.print = {
+            on: async () => {
+                elm.style.display = 'block';
+                screen.classList.remove('static');
+                typeIt.go();
+            },
+            off: async () => {
+                screen.classList.add('static');
+                elm.style.display = 'none';
+                typeIt.reset();
+            }
         }
 
         this.position.setY(VHSTape.#index * this.userData.size.y);
@@ -38,7 +72,7 @@ export default class VHSTape extends GLTFItem {
             paused: true,
             duration: 0.2,
         });
-        
+
         this.addEventListener('click', this.onClick);
         this.addEventListener('mouseover', this.onHover);
         this.addEventListener('mouseout', this.onHover);
@@ -47,12 +81,12 @@ export default class VHSTape extends GLTFItem {
     onClick = (e: any) => {
         e.stopPropagation();
         router.goTo(this.name);
-    }
+    };
 
     onHover = (e: any) => {
         e.stopPropagation();
         if (this.userData.active) return;
         if (e.type === 'mouseover') this.hoverAnimation.play();
         else this.hoverAnimation.reverse();
-    }
+    };
 }

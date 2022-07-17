@@ -22,8 +22,8 @@ export default function notionBlocksToHtml(blocks: any, asArray = false) {
             if (!text || !htmlTag) return '';
             const anchor = url && `<a href="${url}" target="_blank">${text}</a>`;
             
-            return `<${htmlTag}>${anchor || text}</${htmlTag}>`;
+            return `> <${htmlTag}>${anchor || text}</${htmlTag}>`;
         });
         if (asArray) return htmls;
-        return htmls.join('');
+        return htmls.join('<br>');
 }

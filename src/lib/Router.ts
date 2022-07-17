@@ -10,13 +10,19 @@ class Router {
         if (!window.onpopstate) window.onpopstate = this.handleCurrentPath;
     }
 
-    #handleAnimation = (path: string) => {
+    #handleAnimation = async (path: string) => {
         const newTarget = this.#getTargetObject(path);
         if (!newTarget) return; // HANDLE 404 OR SOME SHIT
-        
-        Router.#cameraControls.navigateTo(newTarget.userData?.viewTarget || newTarget);
-        newTarget.userData.animation?.play();
-        this.currentTarget?.userData.animation?.reverse();
+
+        this.currentTarget?.userData.print?.off();
+
+        await Promise.all([
+            Router.#cameraControls.navigateTo(newTarget.userData?.viewTarget || newTarget),
+            newTarget.userData.animation?.play(),
+            this.currentTarget?.userData.animation?.reverse(),
+        ])
+
+        newTarget.userData.print?.on();
         
         this.currentTarget = newTarget;
     };

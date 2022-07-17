@@ -1,160 +1,84 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
+@import './crt.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* @font-face {
-  font-family: 'FA Sysfont C';
-  src: url('fa-sysfont-c.woff2') format('woff2'),
-       url('fa-sysfont-c.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
-} */
-
-/* @font-face {
-  font-family: 'fixedsys';
-  src: url('fixedsys/fsex300-webfont.eot');
-  src: url('fixedsys/fsex300-webfont.eot?#iefix') format('embedded-opentype'),
-  url('fixedsys/fsex300-webfont.woff') format('woff'),
-  url('fixedsys/fsex300-webfont.ttf') format('truetype'),
-  url('fixedsys/fsex300-webfont.svg#fixedsys') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: none;
-  font-smooth: never;
-} */
-
-
 body {
-  @apply font-mono;
+    @apply font-mono;
 }
 
-canvas#three, div#app {
+canvas#three,
+div#app {
     @apply fixed inset-0;
 }
 
 div#app {
-  @apply z-10 pointer-events-none;
+    @apply z-10 pointer-events-none;
 }
 
-article {
-  @apply aspect-square w-72 h-72;
-  @apply flex flex-col;
-}
-
-iframe {
-  @apply aspect-square;
-  /* border border-gray-900; */
-  width: 920px;
-}
-
-.backdrop {
-  @apply text-transparent;
-}
-
-.menubar {
-  @apply flex items-center justify-center;
-  @apply font-bold;
-  @apply border border-gray-900 bg-gray-300;
-}
-
-.text {
-  @apply border border-gray-900 border-t-0;
-  @apply bg-gray-50 bg-opacity-80;
-  @apply p-3;
-  @apply flex-1;
-  /* @apply flex flex-col justify-center; */
-  /* @apply max-w-xs; */
-  /* @apply text-justify; */
-}
-
-h2 {
-  /* @apply text-lg; */
-  @apply mb-3;
-  @apply font-bold;
-}
-
-p {
-  /* @apply text-sm; */
-  @apply mb-2;
-}
-
-a {
-  @apply font-bold underline;
-}
-
-button {
-  @apply absolute left-1;
-  @apply w-4 h-4 border border-gray-900 bg-gray-50 rounded-sm;
-  background-image: url("data:image/svg+xml,%3Csvg stroke='currentColor' fill='currentColor' stroke-width='0' viewBox='0 0 24 24' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M3,3 L21,21 M3,21 L21,3'%3E%3C/path%3E%3C/svg%3E");
-  background-size: cover;
-}
-
-/* div.lid {
-  @apply border border-gray-900;
-} */
-
-
-:root {
-  --blue: #00f;
-  --cyan: #0ff;
-  --yellow: #ff0;
-  --red: #f00;
-  --green: #0f0;
-  --dist-pos: 1px;
-  --dist-neg: calc(var(--dist-pos) * -1);
-  --blur: 0px;
+div.crt-tv {
+    @apply p-9;
 }
 
 div.screen {
-  @apply aspect-square w-96;
-  /* @apply bg-gray-900 bg-opacity-100; */
-  @apply p-12 text-gray-900;
-  /* mix-blend-mode: difference; */
-  /* animation: rgb 8s infinite steps(10); */
-  /* text-shadow:
-    -1px -1px var(--blur) var(--blue),
-    -.5px -.5px var(--blur) var(--cyan),
-    .5px .5px var(--blur) var(--yellow),
-    1px 1px var(--blur) var(--red)
-    ; */
+    @apply bg-gray-900
+    relative
+    h-full;
+    clip-path: url(#crt-bezel);
 }
 
-/* div.skewContainer {
-  @apply bg-orange-300;
-  perspective: 100px;
-  transform: rotateY(45deg);
-} */
+div.screen.static {
+    /* margin: auto; */
+    background-image: repeating-radial-gradient(
+        circle at 17% 32%,
+        white,
+        black 0.00085px
+    );
+    background-position: center;
+    animation: back 5s linear infinite;
+}
 
-@keyframes rgb {
-  0% {
-    text-shadow:
-      0px 0px 0px var(--blue),
-      0px 0px 0px var(--red);
-    filter: blur(0px);
+@keyframes back {
+    from {
+        background-size: 100% 100%;
     }
-    49% {
-    text-shadow:
-      0px 0px 0px var(--blue),
-      0px 0px 0px var(--red);
-    filter: blur(0px);
-  }
-  50% {
-    text-shadow:
-    var(--dist-neg) var(--dist-neg) var(--blur) var(--blue),
-    var(--dist-pos) var(--dist-pos) var(--blur) var(--red);
-    filter: blur(1px);
-  }
-  100% {
-    text-shadow:
-      0px 0px 0px var(--blue),
-      0px 0px 0px var(--red);
-      filter: blur(0px);
-  }
+    to {
+        background-size: 200% 200%;
+    }
 }
 
-.Typewriter__wrapper * {
-  @apply inline;
+article {
+    @apply p-6;
+    @apply text-white;
+    @apply blur-[0.5px];
+}
+
+article > * {
+    @apply inline;
+}
+
+article > br {
+    content: '';
+    @apply block mb-4;
+}
+
+h2 {
+    @apply text-lg;
+    @apply font-bold;
+}
+
+p {
+    @apply text-sm;
+}
+
+a {
+    @apply font-bold underline;
+}
+
+button {
+    @apply absolute left-1;
+    @apply w-4 h-4 border border-gray-900 bg-gray-50 rounded-sm;
+    background-image: url("data:image/svg+xml,%3Csvg stroke='currentColor' fill='currentColor' stroke-width='0' viewBox='0 0 24 24' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M3,3 L21,21 M3,21 L21,3'%3E%3C/path%3E%3C/svg%3E");
+    background-size: cover;
 }

@@ -1,7 +1,6 @@
 import '@/style.css';
 import pages from '../data/pages.json';
 import * as THREE from 'three';
-import { CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer';
 import { gsap } from 'gsap';
 import { InteractionManager } from 'three.interactive';
 import { router, animate } from '@/lib';
@@ -40,6 +39,7 @@ scene.add(floor);
 const tvSet = new TVSet();
 interactionManager.add(tvSet.backButton);
 scene.add(tvSet);
+cssScene.add(tvSet.css3dObject);
 
 const tapes = new THREE.Group();
 
@@ -81,28 +81,15 @@ tapes.position.setZ(-10);
 tapes.name = '/';
 scene.add(tapes);
 
-const element = document.createElement( 'div' );
-element.style.width = '100px';
-element.style.height = '100px';
-element.style.background = new THREE.Color( Math.random() * 0xffffff ).getStyle();
-
-const object = new CSS3DObject( element );
-object.position.copy(tvSet.position)
-object.rotation.copy(tvSet.rotation);
-object.scale.set(.1, .1, .1)
-// object.rotation.x = Math.random();
-// object.rotation.y = Math.random();
-// object.rotation.z = Math.random();
-// object.scale.x = Math.random() + 0.5;
-// object.scale.y = Math.random() + 0.5;
-cssScene.add( object );
-
 animate((_delta) => {
     const delta = clock.getDelta();
-    cameraControls.update(delta);
+    const hasUpdate = cameraControls.update(delta);
     interactionManager.update();
-    renderer.render(scene, camera);
-    css3Drenderer.render(cssScene, camera);
+    
+    // if (hasUpdate) {
+        renderer.render(scene, camera);
+        css3Drenderer.render(cssScene, camera);
+    // }
 });
 
 router.handleCurrentPath();
