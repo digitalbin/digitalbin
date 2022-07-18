@@ -8,6 +8,7 @@ export default class CameraControls extends _CameraControls {
     constructor(camera: THREE.PerspectiveCamera, renderer: THREE.Renderer) {
         super(camera, renderer.domElement);
         this.setPosition(0, 10, 10);
+        // this.setPosition(0, 15, 15);
         this.setTarget(0, 0, 0);
         this.updateCameraUp();
 

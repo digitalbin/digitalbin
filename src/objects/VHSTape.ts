@@ -27,7 +27,7 @@ export default class VHSTape extends GLTFItem {
             ...this.userData,
             active: false,
         };
-        
+
         const screen = document.querySelector('div.screen') as HTMLDivElement;
 
         const elm = document.createElement('article');
@@ -45,15 +45,15 @@ export default class VHSTape extends GLTFItem {
         });
         
         this.userData.print = {
-            on: async () => {
+            on: () => {
                 elm.style.display = 'block';
                 screen.classList.remove('static');
                 typeIt.go();
             },
-            off: async () => {
+            off: () => {
+                typeIt.pause().reset();
                 screen.classList.add('static');
                 elm.style.display = 'none';
-                typeIt.reset();
             }
         }
 

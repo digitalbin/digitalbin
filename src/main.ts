@@ -5,13 +5,13 @@ import { gsap } from 'gsap';
 import { InteractionManager } from 'three.interactive';
 import { router, animate } from '@/lib';
 import { Renderer, CSS3DRenderer, Scene, Camera, CameraControls } from '@/setup';
-import { GLTFItem, Floor, TVSet, VHSTape } from '@/objects';
+import { GLTFItem, Room, TVSet, VHSTape, LightBulb } from '@/objects';
 
 const renderer = new Renderer();
 const css3Drenderer = new CSS3DRenderer();
 const scene = new Scene();
 const cssScene = new Scene();
-// .background = null;
+
 const camera = new Camera();
 const cameraControls = new CameraControls(camera, renderer);
 const clock = new THREE.Clock();
@@ -19,9 +19,8 @@ const clock = new THREE.Clock();
 router.init(scene, cameraControls);
 await GLTFItem.init();
 
-const pointLight = new THREE.PointLight(0xffffff, 1, 1000);
-pointLight.position.set(0, 20, 0);
-scene.add(pointLight);
+const lightBulb = new LightBulb()
+scene.add(lightBulb);
 
 const interactionManager = new InteractionManager(
     renderer,
@@ -30,11 +29,8 @@ const interactionManager = new InteractionManager(
     false,
 );
 
-// const helper = new THREE.PointLightHelper(pointLight, 1, 0x000000);
-// scene.add(helper);
-
-const floor = new Floor();
-scene.add(floor);
+const room = new Room();
+scene.add(room);
 
 const tvSet = new TVSet();
 interactionManager.add(tvSet.backButton);
@@ -61,7 +57,6 @@ pages.forEach((pageItem) => {
             onStart: () => {
                 scene.attach(vhs);
                 vhs.userData.active = true;
-                // cameraControls.navigateTo(tvSet);
             },
             onReverseComplete: () => {
                 tapes.attach(vhs);

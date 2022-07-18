@@ -2,7 +2,8 @@ import { Group } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { getSize } from '@/utils';
 // @ts-expect-error
-import GLB from '@/assets/vhs_vcr_crt.glb';
+// import GLB from '@/assets/vhs_vcr_crt.glb'; // ALL WHITE WITH GRAY EDGES OBJECTS
+import GLB from '@/assets/vhs_vcr_crt2.glb';
 
 export default class GLTFItem extends Group {
     static #model: Group;
