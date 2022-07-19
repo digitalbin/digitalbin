@@ -88,3 +88,4 @@ animate((_delta) => {
 });
 
 router.handleCurrentPath();
+// cameraControls.navigateTo(lightBulb)
