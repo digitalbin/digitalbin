@@ -18,12 +18,11 @@ export default class LightBulb extends Group {
     constructor() {
         super();
 
-        const yellow = 0xfefce8;
-        // const white = 0xffffff;
-        const color = yellow;
+        // const color = 0xfefce8; // Yellowish
+        const color = 0xffffff; // White
 
         const light = new PointLight(color, 1);
-        const light2 = new AmbientLight(color, 0.3);
+        const light2 = new AmbientLight(color, 0.7);
 
         const bulbGeometry = new SphereBufferGeometry(0.5, 16, 8);
         const bulbMaterial = new MeshBasicMaterial({
@@ -59,7 +58,7 @@ export default class LightBulb extends Group {
             const glow = new Sprite(spriteMaterial);
             const scale = 2;
             glow.scale.set(scale, scale, scale);
-            bulb.add(glow);
+            // bulb.add(glow);
         });
 
         this.add(light, light2, bulb);

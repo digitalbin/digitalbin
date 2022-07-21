@@ -30,7 +30,7 @@ export default class CameraControls extends _CameraControls {
 
         this.fitToBox(target, this.animate, {
             paddingTop: 1,
-            paddingBottom: 1,
+            paddingBottom: 0,
             paddingLeft: 1,
             paddingRight: 1,
         });

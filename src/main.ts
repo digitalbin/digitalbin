@@ -5,7 +5,7 @@ import { gsap } from 'gsap';
 import { InteractionManager } from 'three.interactive';
 import { router, animate } from '@/lib';
 import { Renderer, CSS3DRenderer, Scene, Camera, CameraControls } from '@/setup';
-import { GLTFItem, Room, TVSet, VHSTape, LightBulb } from '@/objects';
+import { GLTFItem, Room, TVSet, VHSTape, LightBulb, Poster } from '@/objects';
 
 const renderer = new Renderer();
 const css3Drenderer = new CSS3DRenderer();
@@ -31,6 +31,10 @@ const interactionManager = new InteractionManager(
 
 const room = new Room();
 scene.add(room);
+
+const poster = new Poster();
+interactionManager.add(poster);
+scene.add(poster);
 
 const tvSet = new TVSet();
 interactionManager.add(tvSet.backButton);
