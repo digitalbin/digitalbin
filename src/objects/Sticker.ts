@@ -26,7 +26,7 @@ export default class Sticker extends Object3D {
         text.fontSize = targetSize.y / 2;
         text.anchorX = 'center';
         text.anchorY = 'middle';
-        text.depthOffset = -1;
+        text.depthOffset = -10;
         text.color = 0x111827;
         text.sync();
 

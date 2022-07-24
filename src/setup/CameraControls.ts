@@ -17,9 +17,9 @@ export default class CameraControls extends _CameraControls {
         // this.enabled = false;
     }
     async navigateTo(target: THREE.Object3D) {
-        this.setPosition(0, 10, 10, this.animate);
+        this.setPosition(-100, 100, 100, this.animate);
 
-        await this.setTarget(0, 0, 0, this.animate);
+        // await this.setTarget(0, 0, 0, this.animate);
 
         await this.setTarget(
             target.position.x,
@@ -29,10 +29,10 @@ export default class CameraControls extends _CameraControls {
         );
 
         this.fitToBox(target, this.animate, {
-            paddingTop: 1,
-            paddingBottom: 0,
-            paddingLeft: 1,
-            paddingRight: 1,
+            // paddingTop: 1,
+            // paddingBottom: 0,
+            // paddingLeft: 1,
+            // paddingRight: 1,
         });
     }
 }

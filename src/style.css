@@ -29,23 +29,7 @@ div.screen {
 }
 
 div.screen.static {
-    /* margin: auto; */
-    background-image: repeating-radial-gradient(
-        circle at 17% 32%,
-        white,
-        black 0.00085px
-    );
-    background-position: center;
-    animation: back 5s linear infinite;
-}
-
-@keyframes back {
-    from {
-        background-size: 100% 100%;
-    }
-    to {
-        background-size: 200% 200%;
-    }
+    background-image: url('https://media.giphy.com/media/iF3M9gPPCdulq/giphy.gif');
 }
 
 article {

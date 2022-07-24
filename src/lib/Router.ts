@@ -31,12 +31,13 @@ class Router {
         return Router.#scene.getObjectByName(name);
     };
 
-    handleCurrentPath = () => {        
+    handleCurrentPath = () => {
         const path = window.location.pathname;
         this.#handleAnimation(path);
     };
 
     goTo = (path: string) => {
+        if (path === window.location.pathname) return;
         window.history.pushState({}, '', path);
         this.#handleAnimation(path);
     };

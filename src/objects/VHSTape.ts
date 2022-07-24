@@ -18,7 +18,7 @@ export default class VHSTape extends GLTFItem {
     rotationOffset: number;
     hoverAnimation: gsap.core.Tween;
 
-    constructor({ name, slug, page, pageType, url }: PageItem) {
+    constructor({ name, slug, page, /* pageType, url */ }: PageItem) {
         super('VHS');
         VHSTape.#index++;
 

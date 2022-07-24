@@ -66,6 +66,7 @@ export default class TVSet extends GLTFItem {
 
         object.position
             .copy(this.position)
+            // .setX(12.4)
             .setX(this.position.x - this.position.x / 16)
             .setY(this.vcr.userData.size.y + size / 2);
 

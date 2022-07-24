@@ -43,7 +43,7 @@ cssScene.add(tvSet.css3dObject);
 
 const tapes = new THREE.Group();
 
-pages.forEach((pageItem) => {
+pages.forEach((pageItem: any) => {
     const vhs = new VHSTape(pageItem);
     interactionManager.add(vhs);
     tapes.attach(vhs);
@@ -82,14 +82,15 @@ scene.add(tapes);
 
 animate((_delta) => {
     const delta = clock.getDelta();
-    const hasUpdate = cameraControls.update(delta);
+    // const hasUpdate = cameraControls.update(delta);
+    cameraControls.update(delta);
     interactionManager.update();
     
     // if (hasUpdate) {
-        renderer.render(scene, camera);
-        css3Drenderer.render(cssScene, camera);
+    renderer.render(scene, camera);
+    css3Drenderer.render(cssScene, camera);
     // }
 });
 
 router.handleCurrentPath();
-// cameraControls.navigateTo(lightBulb)
+// cameraControls.navigateTo(tvSet);
