@@ -1,31 +1,27 @@
-// @ts-expect-error
+import { Object3D } from 'three';
 import { Text as TroikaText } from 'troika-three-text';
-
+import PermanentMarker from '@/assets/fonts/permanentmarker.woff';
+import Rocksalt from '@/assets/fonts/rocksalt.woff';
+import WaitingForTheSunrise from '@/assets/fonts/waitingforthesunrise.woff';
 
 const fonts = [
-    'https://fonts.gstatic.com/s/rocksalt/v18/MwQ0bhv11fWD6QsAVOZbsw.woff',
-    'https://fonts.gstatic.com/s/permanentmarker/v16/Fh4uPib9Iyv2ucM6pGQMWimMp004Hak.woff',
-    'https://fonts.gstatic.com/s/waitingforthesunrise/v16/WBL1rFvOYl9CEv2i1mO6KUW8RKWJ2zoXoz5JsYZT.woff',
+    PermanentMarker,
+    Rocksalt,
+    WaitingForTheSunrise,
 ];
 
-export default class Text extends TroikaText {
-    text: string;
-    font: string;
-    fontSize: number;
-    anchorX: string;
-    anchorY: string;
-    depthOffset: number;
-    color: number;
-
+export default class Text extends Object3D {
     constructor(text: string, size: number) {
         super();
-        this.text = text;
-        this.font = fonts[Math.floor(Math.random() * fonts.length)];
-        this.fontSize = size;
-        this.anchorX = 'center';
-        this.anchorY = 'middle';
-        this.depthOffset = -1;
-        this.color = 0x111827;
+        const _text = new TroikaText();
+        _text.text = text;
+        _text.font = fonts[Math.floor(Math.random() * fonts.length)];
+        _text.fontSize = size;
+        _text.anchorX = 'center';
+        _text.anchorY = 'middle';
+        _text.depthOffset = -1;
+        _text.color = 0x111827;
+        this.add(_text);
     }
 }
 

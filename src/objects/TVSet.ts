@@ -1,29 +1,17 @@
-import gsap from 'gsap';
-import { Group, Object3D, Vector3, Mesh } from 'three';
-import { GLTFItem } from '@/objects';
-import { router } from '@/lib';
+import { Group, Object3D, Vector3 } from 'three';
+import { GLTFItem, EjectButton } from '@/objects';
 import { CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer';
 
 export default class TVSet extends GLTFItem {
-    public backButton: Group;
     public vcr: Object3D;
     public crt: Object3D;
     public declare css3dObject: CSS3DObject;
 
     constructor() {
-        super(['VCR', 'BACK', 'EJECT', 'CRT']);
+        super(['VCR', 'CRT']);
 
-        this.backButton = this.getObjectByName('BACK') as Group;
-        this.backButton.add(this.getObjectByName('EJECT') as Mesh);
-        this.backButton.addEventListener('click', () => router.goTo('/'));
-        this.backButton.userData.onHover = gsap.to(this.backButton.position, {
-            z: -this.backButton.userData.size.z / 2,
-            paused: true,
-            duration: 0.2,
-        });
-
-        this.backButton.addEventListener('mouseover', this.onHover);
-        this.backButton.addEventListener('mouseout', this.onHover);
+        const ejectButton = new EjectButton();
+        this.add(ejectButton);
 
         this.crt = this.getObjectByName('CRT') as Group;
         this.vcr = this.getObjectByName('VCR') as Group;
@@ -39,6 +27,7 @@ export default class TVSet extends GLTFItem {
         this.crt.userData.position = new Vector3();
         this.crt.getWorldPosition(this.crt.userData.position);
         this.createHTML();
+        this.name = '/tvset'
     }
 
     createHTML = () => {
@@ -66,18 +55,11 @@ export default class TVSet extends GLTFItem {
 
         object.position
             .copy(this.position)
-            // .setX(12.4)
             .setX(this.position.x - this.position.x / 16)
             .setY(this.vcr.userData.size.y + size / 2);
 
         object.rotation.copy(this.rotation);
 
         this.css3dObject = object;
-    };
-
-    onHover = (e: any) => {
-        e.stopPropagation();
-        if (e.type === 'mouseover') this.backButton.userData.onHover.play();
-        else this.backButton.userData.onHover.reverse();
     };
 }

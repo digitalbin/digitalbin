@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "predev": "node ./data",
+    "predev": "node ./getNotionData.js",
     "build": "tsc && vite build",
-    "prebuild": "node ./data",
+    "prebuild": "node ./getNotionData.js",
     "preview": "vite preview"
   },
   "devDependencies": {

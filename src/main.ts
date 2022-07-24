@@ -1,96 +1,43 @@
-import '@/style.css';
-import pages from '../data/pages.json';
-import * as THREE from 'three';
-import { gsap } from 'gsap';
-import { InteractionManager } from 'three.interactive';
-import { router, animate } from '@/lib';
+import '@/styles/global.css';
+import { Clock } from 'three';
+import { router, interactionManager, animate } from '@/lib';
 import { Renderer, CSS3DRenderer, Scene, Camera, CameraControls } from '@/setup';
-import { GLTFItem, Room, TVSet, VHSTape, LightBulb, Poster } from '@/objects';
+import { GLTFItem, Room, TVSet, VHSTapes, LightBulb, Poster } from '@/objects';
 
 const renderer = new Renderer();
 const css3Drenderer = new CSS3DRenderer();
 const scene = new Scene();
 const cssScene = new Scene();
-
 const camera = new Camera();
 const cameraControls = new CameraControls(camera, renderer);
-const clock = new THREE.Clock();
+const clock = new Clock();
 
-router.init(scene, cameraControls);
-await GLTFItem.init();
+async function initialize() {
+    router.init(scene, cameraControls);
+    interactionManager.init(renderer, camera);
+    await GLTFItem.init();
+}
 
-const lightBulb = new LightBulb()
-scene.add(lightBulb);
+function generateItems() {
+    const room = new Room();
+    const lightBulb = new LightBulb()
+    const poster = new Poster();
+    const tvSet = new TVSet();
+    const vhsTapes = new VHSTapes(scene, tvSet);
 
-const interactionManager = new InteractionManager(
-    renderer,
-    camera,
-    renderer.domElement,
-    false,
-);
+    scene.add(room, lightBulb, poster, tvSet, vhsTapes);
+    cssScene.add(tvSet.css3dObject);
+}
 
-const room = new Room();
-scene.add(room);
-
-const poster = new Poster();
-interactionManager.add(poster);
-scene.add(poster);
-
-const tvSet = new TVSet();
-interactionManager.add(tvSet.backButton);
-scene.add(tvSet);
-cssScene.add(tvSet.css3dObject);
-
-const tapes = new THREE.Group();
-
-pages.forEach((pageItem: any) => {
-    const vhs = new VHSTape(pageItem);
-    interactionManager.add(vhs);
-    tapes.attach(vhs);
-
-    const viaPos = new THREE.Vector3().setY(tvSet.vcr.userData.position.y);
-    const endPos = tvSet.vcr.userData.position.clone();
-
-    const selectionAnimation = gsap
-        .timeline({
-            paused: true,
-            defaults: {
-                ease: 'sine.inOut',
-                duration: 1,
-            },
-            onStart: () => {
-                scene.attach(vhs);
-                vhs.userData.active = true;
-            },
-            onReverseComplete: () => {
-                tapes.attach(vhs);
-                vhs.userData.active = false;
-            },
-        })
-        .to(vhs.position, { ...viaPos })
-        .to(vhs.rotation, { y: vhs.rotationOffset > 0 ? Math.PI : 0 })
-        .to(vhs.position, endPos, '<');
-
-    vhs.userData.animation = selectionAnimation;
-    vhs.userData.viewTarget = tvSet;
-});
-
-tapes.position.setY(tapes.children[0].userData.size.y / 2);
-tapes.position.setZ(-10);
-tapes.name = '/';
-scene.add(tapes);
+initialize()
+    .then(generateItems)
+    .then(router.handleCurrentPath)
 
 animate((_delta) => {
     const delta = clock.getDelta();
-    // const hasUpdate = cameraControls.update(delta);
     cameraControls.update(delta);
     interactionManager.update();
     
-    // if (hasUpdate) {
     renderer.render(scene, camera);
     css3Drenderer.render(cssScene, camera);
-    // }
 });
-
-router.handleCurrentPath();
-// cameraControls.navigateTo(tvSet);

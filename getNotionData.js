@@ -34,7 +34,7 @@ async function queryDb() {
 	const populated = await Promise.all(results.map(populatePage));
     const extracted = populated.map(extract);
 	fs.writeFileSync(
-		new URL('./pages.json', import.meta.url).pathname,
+		new URL('./src/data/pages.json', import.meta.url).pathname,
 		JSON.stringify(extracted, null, 2)
 	);
 }

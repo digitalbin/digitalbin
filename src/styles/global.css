@@ -29,7 +29,8 @@ div.screen {
 }
 
 div.screen.static {
-    background-image: url('https://media.giphy.com/media/iF3M9gPPCdulq/giphy.gif');
+    background-image: url('/static_noise_small.gif');
+    background-size: 50%;
 }
 
 article {
@@ -60,9 +61,9 @@ a {
     @apply font-bold underline;
 }
 
-button {
+/* button {
     @apply absolute left-1;
     @apply w-4 h-4 border border-gray-900 bg-gray-50 rounded-sm;
     background-image: url("data:image/svg+xml,%3Csvg stroke='currentColor' fill='currentColor' stroke-width='0' viewBox='0 0 24 24' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M3,3 L21,21 M3,21 L21,3'%3E%3C/path%3E%3C/svg%3E");
     background-size: cover;
-}
+} */

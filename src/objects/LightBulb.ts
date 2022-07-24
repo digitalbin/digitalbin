@@ -6,13 +6,13 @@ import {
     AmbientLight,
     SphereBufferGeometry,
     MeshBasicMaterial,
-    TextureLoader,
-    SpriteMaterial,
-    AdditiveBlending,
-    Sprite,
+    // TextureLoader,
+    // SpriteMaterial,
+    // AdditiveBlending,
+    // Sprite,
     CylinderBufferGeometry,
 } from 'three';
-import GlowPNG from '@/assets/glow.png';
+// import GlowPNG from '@/assets/glow.png';
 
 export default class LightBulb extends Group {
     constructor() {
@@ -46,20 +46,20 @@ export default class LightBulb extends Group {
 
         bulb.position.setY(-cableHeight);
 
-        const loader = new TextureLoader();
-        loader.load(GlowPNG, (texture) => {
-            const spriteMaterial = new SpriteMaterial({
-                map: texture,
-                color,
-                transparent: false,
-                blending: AdditiveBlending,
-            });
+        // const loader = new TextureLoader();
+        // loader.load(GlowPNG, (texture) => {
+        //     const spriteMaterial = new SpriteMaterial({
+        //         map: texture,
+        //         color,
+        //         transparent: false,
+        //         blending: AdditiveBlending,
+        //     });
 
-            const glow = new Sprite(spriteMaterial);
-            const scale = 2;
-            glow.scale.set(scale, scale, scale);
-            // bulb.add(glow);
-        });
+        //     const glow = new Sprite(spriteMaterial);
+        //     const scale = 2;
+        //     glow.scale.set(scale, scale, scale);
+        //     bulb.add(glow);
+        // });
 
         this.add(light, light2, bulb);
 
