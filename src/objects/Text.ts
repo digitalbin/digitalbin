@@ -1,8 +1,8 @@
 import { Object3D } from 'three';
-import { Text as TroikaText } from 'troika-three-text';
-import PermanentMarker from '@/assets/fonts/permanentmarker.woff';
-import Rocksalt from '@/assets/fonts/rocksalt.woff';
-import WaitingForTheSunrise from '@/assets/fonts/waitingforthesunrise.woff';
+import { Text as TroikaText, preloadFont } from 'troika-three-text';
+import PermanentMarker from '/fonts/permanentmarker.woff';
+import Rocksalt from '/fonts/rocksalt.woff';
+import WaitingForTheSunrise from '/fonts/waitingforthesunrise.woff';
 
 const fonts = [
     PermanentMarker,
@@ -22,6 +22,20 @@ export default class Text extends Object3D {
         _text.depthOffset = -1;
         _text.color = 0x111827;
         this.add(_text);
+    }
+
+    static init() {
+        return new Promise((resolve, _reject) => {
+            let done = 0;
+            fonts.forEach(font => {
+                preloadFont({
+                    font,
+                }, () => {
+                    done += 1;
+                    if (done === fonts.length) resolve(done);
+                });
+            })
+        })
     }
 }
 

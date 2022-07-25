@@ -5,15 +5,19 @@ class Router {
     static #scene: Scene;
     static #cameraControls: CameraControls;
     currentTarget: Object3D | undefined;
+    isMoving: boolean;
 
     constructor() {
         if (!window.onpopstate) window.onpopstate = this.handleCurrentPath;
+        this.isMoving = false;
     }
 
     #handleAnimation = async (path: string) => {
         const newTarget = this.#getTargetObject(path);
         if (!newTarget) return; // HANDLE 404 OR SOME SHIT
 
+        this.isMoving = true;
+        
         this.currentTarget?.userData.print?.off();
 
         await Promise.all([
@@ -25,6 +29,7 @@ class Router {
         newTarget.userData.print?.on();
         
         this.currentTarget = newTarget;
+        this.isMoving = false;
     };
 
     #getTargetObject = (name: string) => {
@@ -32,12 +37,13 @@ class Router {
     };
 
     handleCurrentPath = () => {
+        if (this.isMoving) return;
         const path = window.location.pathname;
         this.#handleAnimation(path);
     };
 
     goTo = (path: string) => {
-        if (path === window.location.pathname) return;
+        if (path === window.location.pathname || this.isMoving) return;
         window.history.pushState({}, '', path);
         this.#handleAnimation(path);
     };
