@@ -28,15 +28,19 @@ function extract(pageData) {
 }
 
 async function queryDb() {
-	const { results } = await notion.databases.query({
-		database_id: DB_ID,
-	});
-	const populated = await Promise.all(results.map(populatePage));
-    const extracted = populated.map(extract);
-	fs.writeFileSync(
-		new URL('./src/data/pages.json', import.meta.url).pathname,
-		JSON.stringify(extracted, null, 2)
-	);
+    try {
+        const { results } = await notion.databases.query({
+            database_id: DB_ID,
+        });
+        const populated = await Promise.all(results.map(populatePage));
+        const extracted = populated.map(extract);
+        fs.writeFileSync(
+            new URL('./src/data/pages.json', import.meta.url).pathname,
+            JSON.stringify(extracted, null, 2)
+        );
+    } catch (err) {
+        console.log('Error getting notion data: ', err);
+    }
 }
 
 queryDb();

@@ -13,7 +13,7 @@
           "page_id": "3634aafc-9e79-4252-a429-e9a8cdb951a9"
         },
         "created_time": "2022-07-22T05:12:00.000Z",
-        "last_edited_time": "2022-07-22T19:41:00.000Z",
+        "last_edited_time": "2022-07-26T17:10:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -30,7 +30,7 @@
             {
               "type": "text",
               "text": {
-                "content": "viaplay",
+                "content": "Viaplay",
                 "link": null
               },
               "annotations": {
@@ -41,7 +41,7 @@
                 "code": false,
                 "color": "default"
               },
-              "plain_text": "viaplay",
+              "plain_text": "Viaplay",
               "href": null
             }
           ],
@@ -99,7 +99,7 @@
           "page_id": "3634aafc-9e79-4252-a429-e9a8cdb951a9"
         },
         "created_time": "2022-07-22T05:12:00.000Z",
-        "last_edited_time": "2022-07-22T19:53:00.000Z",
+        "last_edited_time": "2022-07-26T18:25:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -116,7 +116,7 @@
             {
               "type": "text",
               "text": {
-                "content": "Here at Viaplay my team and I are responsible for the logged out pages with a mission to attract new customers. Practically this has meant a huge variety of tasks ",
+                "content": "Here at Viaplay my team and I are responsible for the logged out pages with a mission to attract new customers. Practically this has meant a huge variety of tasks but the core of our mission is building the new web app for all logged out pages. This includes all existing markets as well as new expansions, including the United States, Poland, the Baltic states and United Kingdom during my time here.",
                 "link": null
               },
               "annotations": {
@@ -127,7 +127,7 @@
                 "code": false,
                 "color": "default"
               },
-              "plain_text": "Here at Viaplay my team and I are responsible for the logged out pages with a mission to attract new customers. Practically this has meant a huge variety of tasks ",
+              "plain_text": "Here at Viaplay my team and I are responsible for the logged out pages with a mission to attract new customers. Practically this has meant a huge variety of tasks but the core of our mission is building the new web app for all logged out pages. This includes all existing markets as well as new expansions, including the United States, Poland, the Baltic states and United Kingdom during my time here.",
               "href": null
             }
           ],
@@ -551,7 +551,7 @@
           "page_id": "e5cbb429-1395-442a-9d33-e7de307e0e38"
         },
         "created_time": "2022-06-15T12:57:00.000Z",
-        "last_edited_time": "2022-07-26T07:31:00.000Z",
+        "last_edited_time": "2022-07-26T08:00:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -637,7 +637,7 @@
           "page_id": "e5cbb429-1395-442a-9d33-e7de307e0e38"
         },
         "created_time": "2022-07-26T07:28:00.000Z",
-        "last_edited_time": "2022-07-26T07:34:00.000Z",
+        "last_edited_time": "2022-07-26T08:00:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -654,7 +654,7 @@
             {
               "type": "text",
               "text": {
-                "content": "While I attended the Digital Data Strategy program I was first introduced to web development which caught my interest completely. So much so that I decided to put all my effort into it while ignoring the",
+                "content": "While I attended the Digital Data Strategy program I was first introduced to web development which caught my interest completely. So much so that I focused almost exclusively on javascript and ignored the digital data stuff I was supposed to learn.",
                 "link": null
               },
               "annotations": {
@@ -665,7 +665,50 @@
                 "code": false,
                 "color": "default"
               },
-              "plain_text": "While I attended the Digital Data Strategy program I was first introduced to web development which caught my interest completely. So much so that I decided to put all my effort into it while ignoring the",
+              "plain_text": "While I attended the Digital Data Strategy program I was first introduced to web development which caught my interest completely. So much so that I focused almost exclusively on javascript and ignored the digital data stuff I was supposed to learn.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "9b1021f2-50cb-457a-80e2-e70aba71a738",
+        "parent": {
+          "type": "page_id",
+          "page_id": "e5cbb429-1395-442a-9d33-e7de307e0e38"
+        },
+        "created_time": "2022-07-26T07:54:00.000Z",
+        "last_edited_time": "2022-07-26T07:59:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "I have since then returned to Hyper Island as a guest lecturer for the Frontend Developer program.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "I have since then returned to Hyper Island as a guest lecturer for the Frontend Developer program.",
               "href": null
             }
           ],
@@ -799,7 +842,7 @@
           "page_id": "a1feacf6-49e8-4a74-ba83-13f2e59c0ffd"
         },
         "created_time": "2022-06-15T12:56:00.000Z",
-        "last_edited_time": "2022-06-15T12:56:00.000Z",
+        "last_edited_time": "2022-07-26T10:50:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -816,7 +859,7 @@
             {
               "type": "text",
               "text": {
-                "content": "Here I dove deep into React and advanced web development and learned from some of the best in the business.",
+                "content": "This was my first place of employment as a developer, a consultancy firm that specialize in frontend development. Many educational efforts were done here i.e. hosting various meetups and organizing monthly workshops where we got to explore bleeding edge web tech.",
                 "link": null
               },
               "annotations": {
@@ -827,7 +870,7 @@
                 "code": false,
                 "color": "default"
               },
-              "plain_text": "Here I dove deep into React and advanced web development and learned from some of the best in the business.",
+              "plain_text": "This was my first place of employment as a developer, a consultancy firm that specialize in frontend development. Many educational efforts were done here i.e. hosting various meetups and organizing monthly workshops where we got to explore bleeding edge web tech.",
               "href": null
             }
           ],
@@ -836,13 +879,13 @@
       },
       {
         "object": "block",
-        "id": "d1ee3380-a9af-47f2-aee0-a2dd989eb2ad",
+        "id": "0b0bf773-a869-4d73-b522-46b31002a75e",
         "parent": {
           "type": "page_id",
           "page_id": "a1feacf6-49e8-4a74-ba83-13f2e59c0ffd"
         },
-        "created_time": "2022-06-15T12:56:00.000Z",
-        "last_edited_time": "2022-06-15T12:56:00.000Z",
+        "created_time": "2022-07-26T08:08:00.000Z",
+        "last_edited_time": "2022-07-26T08:08:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -1213,13 +1256,13 @@
     "page": [
       {
         "object": "block",
-        "id": "50a44549-a0ea-4fd1-a358-45a8eaf10373",
+        "id": "850704de-bb9a-44aa-9f88-3f197e8edb53",
         "parent": {
           "type": "page_id",
           "page_id": "ca94eff0-68b6-4501-96c8-77f811fa54b7"
         },
-        "created_time": "2022-06-15T12:54:00.000Z",
-        "last_edited_time": "2022-06-15T12:56:00.000Z",
+        "created_time": "2022-07-26T16:02:00.000Z",
+        "last_edited_time": "2022-07-26T16:02:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -1305,7 +1348,7 @@
           "page_id": "ca94eff0-68b6-4501-96c8-77f811fa54b7"
         },
         "created_time": "2022-06-15T12:56:00.000Z",
-        "last_edited_time": "2022-06-15T12:56:00.000Z",
+        "last_edited_time": "2022-07-26T17:09:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -1322,7 +1365,7 @@
             {
               "type": "text",
               "text": {
-                "content": "Migrated Sweden's 3rd biggest site from old legacy code to a Reactjs/Nextjs-stack.",
+                "content": "Started as a consultancy gig which turned into a full time employment as I became key in the migration work of moving from an outdated tech stack to a modern SSR web app. I was also a creator of hitta-components: a component library used widely across the app.",
                 "link": null
               },
               "annotations": {
@@ -1333,7 +1376,7 @@
                 "code": false,
                 "color": "default"
               },
-              "plain_text": "Migrated Sweden's 3rd biggest site from old legacy code to a Reactjs/Nextjs-stack.",
+              "plain_text": "Started as a consultancy gig which turned into a full time employment as I became key in the migration work of moving from an outdated tech stack to a modern SSR web app. I was also a creator of hitta-components: a component library used widely across the app.",
               "href": null
             }
           ],
@@ -1342,13 +1385,13 @@
       },
       {
         "object": "block",
-        "id": "851f7e16-696f-47fa-865c-faf7b05dff77",
+        "id": "2e9d1a6c-2455-459f-94e9-0d07dc7dbf60",
         "parent": {
           "type": "page_id",
           "page_id": "ca94eff0-68b6-4501-96c8-77f811fa54b7"
         },
-        "created_time": "2022-06-15T12:55:00.000Z",
-        "last_edited_time": "2022-06-15T12:55:00.000Z",
+        "created_time": "2022-07-26T16:55:00.000Z",
+        "last_edited_time": "2022-07-26T16:55:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
