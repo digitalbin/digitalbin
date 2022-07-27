@@ -18,7 +18,7 @@ export default class VHSTape extends GLTFItem {
     rotationOffset: number;
     hoverAnimation: gsap.core.Tween;
 
-    constructor({ name, slug, page, /* pageType, url */ }: PageItem) {
+    constructor({ name, slug, page, pageType /* url */ }: PageItem) {
         super('VHS');
         VHSTape.#index++;
 
@@ -32,30 +32,30 @@ export default class VHSTape extends GLTFItem {
 
         const elm = document.createElement('article');
         elm.classList.add('crt');
-        elm.style.display = 'none';
+        // elm.style.display = 'none';
         elm.innerHTML = notionBlocksToHtml(page);
 
         screen.appendChild(elm);
 
-        const typeIt = new (TypeIt as any)(elm, {
-            lifeLike: false,
-            speed: 10,
-            startDelay: 0,
-            cursorChar: '<span style="padding-left: .3rem">▊</span>',
-        });
-        
+        // const typeIt = new (TypeIt as any)(elm, {
+        //     lifeLike: false,
+        //     speed: 10,
+        //     startDelay: 0,
+        //     cursorChar: '<span style="padding-left: .3rem">▊</span>',
+        // });
+
         this.userData.print = {
             on: () => {
                 elm.style.display = 'block';
                 screen.classList.remove('static');
-                typeIt.go();
+                // typeIt.go();
             },
             off: () => {
-                typeIt.pause().reset();
+                // typeIt.pause().reset();
                 screen.classList.add('static');
                 elm.style.display = 'none';
-            }
-        }
+            },
+        };
 
         this.position.setY(VHSTape.#index * this.userData.size.y);
         this.rotationOffset = MathUtils.randFloat(
@@ -64,13 +64,16 @@ export default class VHSTape extends GLTFItem {
         );
         this.rotateY(this.rotationOffset);
 
-        const sticker = new Sticker(name, this.userData.size);
+        const sticker = new Sticker(
+            { title: name, label: pageType },
+            this.userData.size,
+        );
         this.add(sticker);
 
         this.hoverAnimation = gsap.to(this.position, {
             z: this.userData.size.z / 4,
             paused: true,
-            duration: 0.2,
+            duration: 0.1,
         });
 
         this.addEventListener('click', this.onClick);

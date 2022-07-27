@@ -45,7 +45,7 @@ div.screen {
 }
 
 div.screen.static {
-    background-image: url('/static_noise_small.gif');
+    background-image: url('/static_noise.gif');
     background-size: 50%;
 }
 

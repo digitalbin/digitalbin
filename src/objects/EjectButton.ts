@@ -9,7 +9,7 @@ export default class EjectButton extends GLTFItem {
         const hoverAnimation = gsap.to(this.position, {
             z: -size.z / 2,
             paused: true,
-            duration: 0.2,
+            duration: 0.1,
         });
 
         function onHover(e: any) {

@@ -99,7 +99,7 @@
           "page_id": "3634aafc-9e79-4252-a429-e9a8cdb951a9"
         },
         "created_time": "2022-07-22T05:12:00.000Z",
-        "last_edited_time": "2022-07-26T18:25:00.000Z",
+        "last_edited_time": "2022-07-26T18:54:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -116,7 +116,7 @@
             {
               "type": "text",
               "text": {
-                "content": "Here at Viaplay my team and I are responsible for the logged out pages with a mission to attract new customers. Practically this has meant a huge variety of tasks but the core of our mission is building the new web app for all logged out pages. This includes all existing markets as well as new expansions, including the United States, Poland, the Baltic states and United Kingdom during my time here.",
+                "content": "In a nutshell my team and I are responsible for the logged out pages with a mission to attract new customers.",
                 "link": null
               },
               "annotations": {
@@ -127,7 +127,93 @@
                 "code": false,
                 "color": "default"
               },
-              "plain_text": "Here at Viaplay my team and I are responsible for the logged out pages with a mission to attract new customers. Practically this has meant a huge variety of tasks but the core of our mission is building the new web app for all logged out pages. This includes all existing markets as well as new expansions, including the United States, Poland, the Baltic states and United Kingdom during my time here.",
+              "plain_text": "In a nutshell my team and I are responsible for the logged out pages with a mission to attract new customers.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "ef0278ad-586f-4993-94b7-a0b8489fec4a",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3634aafc-9e79-4252-a429-e9a8cdb951a9"
+        },
+        "created_time": "2022-07-26T18:52:00.000Z",
+        "last_edited_time": "2022-07-26T18:52:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Practically this has meant a huge variety of tasks but the core of our mission is building the new web app for all logged out pages.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Practically this has meant a huge variety of tasks but the core of our mission is building the new web app for all logged out pages.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "c5c28349-5eda-4f8e-b169-913c26f56baa",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3634aafc-9e79-4252-a429-e9a8cdb951a9"
+        },
+        "created_time": "2022-07-26T18:52:00.000Z",
+        "last_edited_time": "2022-07-26T18:53:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "This includes all existing markets as well as new expansions e.g. the United States, Poland, the Baltic states and United Kingdom during my time here.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "This includes all existing markets as well as new expansions e.g. the United States, Poland, the Baltic states and United Kingdom during my time here.",
               "href": null
             }
           ],
@@ -242,13 +328,56 @@
     "page": [
       {
         "object": "block",
-        "id": "e80156db-9feb-4c59-b82e-d67b9ee82f88",
+        "id": "9dadd172-a8e2-42e7-b83a-096b0cdeeadd",
+        "parent": {
+          "type": "page_id",
+          "page_id": "177cd4c4-1aa6-41c3-9487-5594476a846b"
+        },
+        "created_time": "2022-07-27T06:59:00.000Z",
+        "last_edited_time": "2022-07-27T06:59:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "heading_1",
+        "heading_1": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "billigprilla.se",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "billigprilla.se",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "df7e0b6a-4ae1-42be-890a-2306dcac63d8",
         "parent": {
           "type": "page_id",
           "page_id": "177cd4c4-1aa6-41c3-9487-5594476a846b"
         },
         "created_time": "2022-06-15T13:09:00.000Z",
-        "last_edited_time": "2022-06-15T13:10:00.000Z",
+        "last_edited_time": "2022-07-27T06:59:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -291,7 +420,7 @@
           "page_id": "177cd4c4-1aa6-41c3-9487-5594476a846b"
         },
         "created_time": "2022-06-15T13:09:00.000Z",
-        "last_edited_time": "2022-06-15T13:09:00.000Z",
+        "last_edited_time": "2022-07-27T07:06:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -308,7 +437,7 @@
             {
               "type": "text",
               "text": {
-                "content": "All cool info regarding this website here aight",
+                "content": "This was built with Gatsby and graphql on the frontend, backed by an Express REST API with MongoDB.",
                 "link": null
               },
               "annotations": {
@@ -319,7 +448,110 @@
                 "code": false,
                 "color": "default"
               },
-              "plain_text": "All cool info regarding this website here aight",
+              "plain_text": "This was built with Gatsby and graphql on the frontend, backed by an Express REST API with MongoDB.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "0867c318-4818-4c34-8799-345e5dfcca21",
+        "parent": {
+          "type": "page_id",
+          "page_id": "177cd4c4-1aa6-41c3-9487-5594476a846b"
+        },
+        "created_time": "2022-07-27T07:06:00.000Z",
+        "last_edited_time": "2022-07-27T07:06:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "I also built a price scanner that I hosted on a raspberry pi, which updated each price a couple of times a day, which automatically regenerated the static pages if it detected any price change.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "I also built a price scanner that I hosted on a raspberry pi, which updated each price a couple of times a day, which automatically regenerated the static pages if it detected any price change.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "ac26906d-34fc-41dd-b914-19c79382bced",
+        "parent": {
+          "type": "page_id",
+          "page_id": "177cd4c4-1aa6-41c3-9487-5594476a846b"
+        },
+        "created_time": "2022-07-27T07:07:00.000Z",
+        "last_edited_time": "2022-07-27T07:08:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Note: ",
+                "link": null
+              },
+              "annotations": {
+                "bold": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Note: ",
+              "href": null
+            },
+            {
+              "type": "text",
+              "text": {
+                "content": "This project isn’t maintained anymore so expect dead links and outdated information.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "This project isn’t maintained anymore so expect dead links and outdated information.",
               "href": null
             }
           ],
@@ -381,13 +613,56 @@
     "page": [
       {
         "object": "block",
-        "id": "93a1b5b8-2a06-4caa-b196-42ab6155b4d4",
+        "id": "c32bf56a-c729-4739-91f5-285acec1fbb4",
+        "parent": {
+          "type": "page_id",
+          "page_id": "815df10b-b2f1-49b8-aa6e-9c898ec81cf6"
+        },
+        "created_time": "2022-07-27T07:09:00.000Z",
+        "last_edited_time": "2022-07-27T07:09:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "heading_1",
+        "heading_1": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Gröna Linjen Bryggeri",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Gröna Linjen Bryggeri",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "48671534-dc7f-4f28-951d-415e8d949352",
         "parent": {
           "type": "page_id",
           "page_id": "815df10b-b2f1-49b8-aa6e-9c898ec81cf6"
         },
         "created_time": "2022-06-15T13:07:00.000Z",
-        "last_edited_time": "2022-06-15T13:08:00.000Z",
+        "last_edited_time": "2022-07-27T07:15:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -430,7 +705,7 @@
           "page_id": "815df10b-b2f1-49b8-aa6e-9c898ec81cf6"
         },
         "created_time": "2022-06-15T13:07:00.000Z",
-        "last_edited_time": "2022-06-15T13:08:00.000Z",
+        "last_edited_time": "2022-07-27T08:04:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -447,7 +722,7 @@
             {
               "type": "text",
               "text": {
-                "content": "All cool info regarding this website here aight",
+                "content": "…known for slingin’ the illest IPAs in town. ",
                 "link": null
               },
               "annotations": {
@@ -458,7 +733,93 @@
                 "code": false,
                 "color": "default"
               },
-              "plain_text": "All cool info regarding this website here aight",
+              "plain_text": "…known for slingin’ the illest IPAs in town. ",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "5cb5e813-50d1-4811-bf76-85aec790615c",
+        "parent": {
+          "type": "page_id",
+          "page_id": "815df10b-b2f1-49b8-aa6e-9c898ec81cf6"
+        },
+        "created_time": "2022-07-27T07:55:00.000Z",
+        "last_edited_time": "2022-07-27T08:06:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "This page was built with SvelteKit and Notion as a CMS. This project also pushed me down the rabbit hole of WebGL and 3D graphics.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "This page was built with SvelteKit and Notion as a CMS. This project also pushed me down the rabbit hole of WebGL and 3D graphics.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "7137fedc-0d5b-4fdf-b284-3f64f750d2bc",
+        "parent": {
+          "type": "page_id",
+          "page_id": "815df10b-b2f1-49b8-aa6e-9c898ec81cf6"
+        },
+        "created_time": "2022-07-27T08:04:00.000Z",
+        "last_edited_time": "2022-07-27T08:04:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Because of legal reasons I am obliged to disclose my partnership in the company. ",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Because of legal reasons I am obliged to disclose my partnership in the company. ",
               "href": null
             }
           ],
@@ -637,7 +998,7 @@
           "page_id": "e5cbb429-1395-442a-9d33-e7de307e0e38"
         },
         "created_time": "2022-07-26T07:28:00.000Z",
-        "last_edited_time": "2022-07-26T08:00:00.000Z",
+        "last_edited_time": "2022-07-26T18:54:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -842,7 +1203,7 @@
           "page_id": "a1feacf6-49e8-4a74-ba83-13f2e59c0ffd"
         },
         "created_time": "2022-06-15T12:56:00.000Z",
-        "last_edited_time": "2022-07-26T10:50:00.000Z",
+        "last_edited_time": "2022-07-26T18:54:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -879,13 +1240,13 @@
       },
       {
         "object": "block",
-        "id": "0b0bf773-a869-4d73-b522-46b31002a75e",
+        "id": "9c65da3b-8a6a-4eba-a221-ac2f4278ea7e",
         "parent": {
           "type": "page_id",
           "page_id": "a1feacf6-49e8-4a74-ba83-13f2e59c0ffd"
         },
-        "created_time": "2022-07-26T08:08:00.000Z",
-        "last_edited_time": "2022-07-26T08:08:00.000Z",
+        "created_time": "2022-07-26T18:55:00.000Z",
+        "last_edited_time": "2022-07-26T18:58:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -898,7 +1259,25 @@
         "archived": false,
         "type": "paragraph",
         "paragraph": {
-          "rich_text": [],
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "This gave me an understanding of the vastness of web development and a chance to dip my toes in numerous tools and strategies that one can adapt early on in my career.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "This gave me an understanding of the vastness of web development and a chance to dip my toes in numerous tools and strategies that one can adapt early on in my career.",
+              "href": null
+            }
+          ],
           "color": "default"
         }
       }
@@ -918,7 +1297,7 @@
           "page_id": "61df7860-8da4-4828-b788-e3c2600e4acb"
         },
         "created_time": "2022-06-24T19:23:00.000Z",
-        "last_edited_time": "2022-06-24T19:23:00.000Z",
+        "last_edited_time": "2022-07-27T09:06:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -935,7 +1314,7 @@
             {
               "type": "text",
               "text": {
-                "content": "ALBE KINGEN",
+                "content": "I’m digitalbin",
                 "link": null
               },
               "annotations": {
@@ -946,7 +1325,7 @@
                 "code": false,
                 "color": "default"
               },
-              "plain_text": "ALBE KINGEN",
+              "plain_text": "I’m digitalbin",
               "href": null
             }
           ],
@@ -955,13 +1334,13 @@
       },
       {
         "object": "block",
-        "id": "c13a06d5-1c74-42e6-9a13-fc718586f0e1",
+        "id": "eba318ad-21b6-433a-87f9-ad3e001a8259",
         "parent": {
           "type": "page_id",
           "page_id": "61df7860-8da4-4828-b788-e3c2600e4acb"
         },
-        "created_time": "2022-06-24T19:23:00.000Z",
-        "last_edited_time": "2022-06-24T19:23:00.000Z",
+        "created_time": "2022-07-27T09:06:00.000Z",
+        "last_edited_time": "2022-07-27T12:06:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -978,7 +1357,7 @@
             {
               "type": "text",
               "text": {
-                "content": "Fett chill dude mannen (;",
+                "content": "Also known as Albin Hagström, a developer based in Stockholm. ",
                 "link": null
               },
               "annotations": {
@@ -989,93 +1368,7 @@
                 "code": false,
                 "color": "default"
               },
-              "plain_text": "Fett chill dude mannen (;",
-              "href": null
-            }
-          ],
-          "color": "default"
-        }
-      },
-      {
-        "object": "block",
-        "id": "1b5b85d9-56bf-4a52-8a0f-e93405d0f19c",
-        "parent": {
-          "type": "page_id",
-          "page_id": "61df7860-8da4-4828-b788-e3c2600e4acb"
-        },
-        "created_time": "2022-06-24T19:23:00.000Z",
-        "last_edited_time": "2022-06-24T19:23:00.000Z",
-        "created_by": {
-          "object": "user",
-          "id": "847173af-e952-498f-8c1e-e38d85769a19"
-        },
-        "last_edited_by": {
-          "object": "user",
-          "id": "847173af-e952-498f-8c1e-e38d85769a19"
-        },
-        "has_children": false,
-        "archived": false,
-        "type": "heading_2",
-        "heading_2": {
-          "rich_text": [
-            {
-              "type": "text",
-              "text": {
-                "content": "Ere fucking fest lr (;",
-                "link": null
-              },
-              "annotations": {
-                "bold": false,
-                "italic": false,
-                "strikethrough": false,
-                "underline": false,
-                "code": false,
-                "color": "default"
-              },
-              "plain_text": "Ere fucking fest lr (;",
-              "href": null
-            }
-          ],
-          "color": "default"
-        }
-      },
-      {
-        "object": "block",
-        "id": "24c4ba45-8f9d-4729-92b6-5c6328408f9b",
-        "parent": {
-          "type": "page_id",
-          "page_id": "61df7860-8da4-4828-b788-e3c2600e4acb"
-        },
-        "created_time": "2022-06-24T19:23:00.000Z",
-        "last_edited_time": "2022-06-24T19:23:00.000Z",
-        "created_by": {
-          "object": "user",
-          "id": "847173af-e952-498f-8c1e-e38d85769a19"
-        },
-        "last_edited_by": {
-          "object": "user",
-          "id": "847173af-e952-498f-8c1e-e38d85769a19"
-        },
-        "has_children": false,
-        "archived": false,
-        "type": "paragraph",
-        "paragraph": {
-          "rich_text": [
-            {
-              "type": "text",
-              "text": {
-                "content": "Kommer med hinken dags å festa festen xD",
-                "link": null
-              },
-              "annotations": {
-                "bold": false,
-                "italic": false,
-                "strikethrough": false,
-                "underline": false,
-                "code": false,
-                "color": "default"
-              },
-              "plain_text": "Kommer med hinken dags å festa festen xD",
+              "plain_text": "Also known as Albin Hagström, a developer based in Stockholm. ",
               "href": null
             }
           ],
@@ -1092,13 +1385,56 @@
     "page": [
       {
         "object": "block",
-        "id": "cf3bd217-0287-42d1-894e-5bacba23c00a",
+        "id": "94bce41f-fac6-4b7b-a8f7-6396008efe68",
+        "parent": {
+          "type": "page_id",
+          "page_id": "b0fd713e-2bde-48c8-ae1a-8ca532741079"
+        },
+        "created_time": "2022-07-27T08:50:00.000Z",
+        "last_edited_time": "2022-07-27T08:50:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "heading_1",
+        "heading_1": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Vollie",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Vollie",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "0da858a3-c87b-47db-a5ea-732ad1cc16f9",
         "parent": {
           "type": "page_id",
           "page_id": "b0fd713e-2bde-48c8-ae1a-8ca532741079"
         },
         "created_time": "2022-06-15T12:58:00.000Z",
-        "last_edited_time": "2022-06-15T12:58:00.000Z",
+        "last_edited_time": "2022-07-27T08:50:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -1141,7 +1477,7 @@
           "page_id": "b0fd713e-2bde-48c8-ae1a-8ca532741079"
         },
         "created_time": "2022-06-15T12:59:00.000Z",
-        "last_edited_time": "2022-06-15T12:59:00.000Z",
+        "last_edited_time": "2022-07-27T09:02:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -1158,7 +1494,7 @@
             {
               "type": "text",
               "text": {
-                "content": "Some information about this project oh my god its so funny",
+                "content": "This is a project made by me (dev) and my friend ",
                 "link": null
               },
               "annotations": {
@@ -1169,7 +1505,86 @@
                 "code": false,
                 "color": "default"
               },
-              "plain_text": "Some information about this project oh my god its so funny",
+              "plain_text": "This is a project made by me (dev) and my friend ",
+              "href": null
+            },
+            {
+              "type": "text",
+              "text": {
+                "content": "MickeTusen",
+                "link": {
+                  "url": "https://m-w.me/"
+                }
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "MickeTusen",
+              "href": "https://m-w.me/"
+            },
+            {
+              "type": "text",
+              "text": {
+                "content": " (design) out of boredom.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": " (design) out of boredom.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        }
+      },
+      {
+        "object": "block",
+        "id": "0506ea1d-31ad-48d7-a996-210234b30790",
+        "parent": {
+          "type": "page_id",
+          "page_id": "b0fd713e-2bde-48c8-ae1a-8ca532741079"
+        },
+        "created_time": "2022-07-27T09:02:00.000Z",
+        "last_edited_time": "2022-07-27T09:02:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "847173af-e952-498f-8c1e-e38d85769a19"
+        },
+        "has_children": false,
+        "archived": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "It uses the unofficial reddit JSON API and is built in Svelte.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "It uses the unofficial reddit JSON API and is built in Svelte.",
               "href": null
             }
           ],
@@ -1348,7 +1763,7 @@
           "page_id": "ca94eff0-68b6-4501-96c8-77f811fa54b7"
         },
         "created_time": "2022-06-15T12:56:00.000Z",
-        "last_edited_time": "2022-07-26T17:09:00.000Z",
+        "last_edited_time": "2022-07-26T18:59:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -1365,7 +1780,7 @@
             {
               "type": "text",
               "text": {
-                "content": "Started as a consultancy gig which turned into a full time employment as I became key in the migration work of moving from an outdated tech stack to a modern SSR web app. I was also a creator of hitta-components: a component library used widely across the app.",
+                "content": "Started as a consultancy gig which turned into a full time employment as I became key in the migration work of moving from an outdated tech stack to a modern SSR web app.",
                 "link": null
               },
               "annotations": {
@@ -1376,7 +1791,7 @@
                 "code": false,
                 "color": "default"
               },
-              "plain_text": "Started as a consultancy gig which turned into a full time employment as I became key in the migration work of moving from an outdated tech stack to a modern SSR web app. I was also a creator of hitta-components: a component library used widely across the app.",
+              "plain_text": "Started as a consultancy gig which turned into a full time employment as I became key in the migration work of moving from an outdated tech stack to a modern SSR web app.",
               "href": null
             }
           ],
@@ -1385,13 +1800,13 @@
       },
       {
         "object": "block",
-        "id": "2e9d1a6c-2455-459f-94e9-0d07dc7dbf60",
+        "id": "b172fa41-3bd7-4723-b542-ba4077f6df6c",
         "parent": {
           "type": "page_id",
           "page_id": "ca94eff0-68b6-4501-96c8-77f811fa54b7"
         },
-        "created_time": "2022-07-26T16:55:00.000Z",
-        "last_edited_time": "2022-07-26T16:55:00.000Z",
+        "created_time": "2022-07-26T18:59:00.000Z",
+        "last_edited_time": "2022-07-26T19:00:00.000Z",
         "created_by": {
           "object": "user",
           "id": "847173af-e952-498f-8c1e-e38d85769a19"
@@ -1404,7 +1819,59 @@
         "archived": false,
         "type": "paragraph",
         "paragraph": {
-          "rich_text": [],
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "In addition, I got the opportunity to create ",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "In addition, I got the opportunity to create ",
+              "href": null
+            },
+            {
+              "type": "text",
+              "text": {
+                "content": "hitta-components",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": true,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "hitta-components",
+              "href": null
+            },
+            {
+              "type": "text",
+              "text": {
+                "content": ": a component library widely used across the app.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": ": a component library widely used across the app.",
+              "href": null
+            }
+          ],
           "color": "default"
         }
       }
