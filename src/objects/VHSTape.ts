@@ -5,14 +5,6 @@ import { GLTFItem, Sticker } from '@/objects';
 import { router } from '@/lib';
 import TypeIt from 'typeit';
 
-interface PageItem {
-    name: string;
-    slug: string;
-    page: [];
-    pageType: string;
-    url: string;
-}
-
 export default class VHSTape extends GLTFItem {
     static #index = -1;
     declare rotationOffset: number;
@@ -41,14 +33,14 @@ export default class VHSTape extends GLTFItem {
 
         this.userData.print = {
             on: () => {
-                element.style.display = 'block';
+                element.classList.add('active');
                 screen.classList.remove('static');
                 typeIt.go();
             },
             off: () => {
                 typeIt.pause().reset();
                 screen.classList.add('static');
-                element.style.display = 'none';
+                element.classList.remove('active');
             },
         };
 

@@ -1,6 +1,5 @@
 import { Group, Scene, Vector3 } from 'three';
 import gsap from 'gsap';
-// import pages from '@/data/pages.json';
 import { interactionManager } from '@/lib';
 import VHSTape from '@/objects/VHSTape';
 import type { TVSet } from '@/objects';
@@ -11,7 +10,7 @@ export default class VHSTapes extends Group {
         
         const viaPos = new Vector3().setY(tvSet.vcr.userData.position.y);
         const endPos = tvSet.vcr.userData.position.clone();
-        const infoNodes = document.querySelectorAll('article');
+        const infoNodes = Array.from(document.querySelectorAll('article')).reverse();
         infoNodes.forEach((node: HTMLElement) => {
             const vhsTape = new VHSTape(node);
             interactionManager.add(vhsTape);

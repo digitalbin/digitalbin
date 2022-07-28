@@ -33,7 +33,10 @@ export default function notionBlocksToHtml(blocks) {
                 );
             },
         );
-        return `> <${topLevelElement}>${textContent.join('')}</${topLevelElement}>`;
+        if (!textContent.length) return null;
+        return `> <${topLevelElement}>${textContent.join(
+            '',
+        )}</${topLevelElement}>`;
     });
     return htmls.join('<br>');
 }

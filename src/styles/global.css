@@ -57,6 +57,12 @@ article {
     @apply text-white;
     @apply blur-[0.5px];
     @apply absolute inset-0;
+    @apply hidden;
+}
+
+article.active {
+    @apply block;
+    @apply crt;
 }
 
 article > * {
@@ -66,6 +72,11 @@ article > * {
 article > br {
     content: '';
     @apply block mb-4;
+}
+
+h1 {
+    @apply text-xl;
+    @apply font-bold;
 }
 
 h2 {

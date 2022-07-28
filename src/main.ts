@@ -43,7 +43,11 @@ function generateItems() {
     cssScene.add(tvSet.css3dObject);
 }
 
-initialize().then(generateItems).then(router.handleCurrentPath);
+initialize()
+    .then(generateItems)
+    .then(router.handleCurrentPath)
+
+let loaded = false;
 
 animate((_delta) => {
     const delta = clock.getDelta();
@@ -51,6 +55,10 @@ animate((_delta) => {
     interactionManager.update();
     if (router.isMoving || hasCameraUpdate) {
         render();
+    }
+    if (!loaded && scene.children.length > 0) {
+        loaded = true;
+        document.body.classList.remove('brtl');
     }
 });
 

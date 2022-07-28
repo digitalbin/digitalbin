@@ -29,6 +29,10 @@ export default async function getNotionData() {
     try {
         const { results } = await notion.databases.query({
             database_id: DB_ID,
+            sorts: [{
+                property: 'order',
+                direction: 'ascending'
+            }]
         });
         const populated = await Promise.all(results.map(populatePage));
         const extracted = populated.map(extractProperties);
