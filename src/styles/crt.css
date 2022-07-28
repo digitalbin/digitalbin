@@ -186,6 +186,6 @@
     pointer-events: none;
 }
 .crt {
-    position: relative;
+    /* position: relative; */
     animation: textShadow 1.6s infinite;
 }

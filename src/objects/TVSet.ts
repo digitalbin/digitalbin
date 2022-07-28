@@ -31,24 +31,14 @@ export default class TVSet extends GLTFItem {
     }
 
     createHTML = () => {
-        const crtWrapper = document.createElement('div');
-        crtWrapper.style.width = '500px';
-        crtWrapper.style.height = '500px';
-        crtWrapper.classList.add('crt-tv');
+        const crtTv = document.querySelector('.crt-tv') as HTMLElement;
 
-        const screen = document.createElement('div');
-        screen.classList.add('screen');
-        screen.classList.add('static');
-        crtWrapper.appendChild(screen);
-
-        document.querySelector('#app')?.appendChild(crtWrapper);
-
-        const elmSize = crtWrapper.getBoundingClientRect();
+        const elmSize = crtTv.getBoundingClientRect();
         const crtSize = this.crt.userData.size;
         let scale = crtSize.x / elmSize.width;
         scale = scale - scale * 0.01;
 
-        const object = new CSS3DObject(crtWrapper);
+        const object = new CSS3DObject(crtTv);
         object.scale.set(scale, scale, scale);
 
         const size = elmSize.width * scale;

@@ -13,8 +13,9 @@ class Router {
     }
 
     #handleAnimation = async (path: string) => {
-        const newTarget = this.#getTargetObject(path);
-        if (!newTarget) return; // HANDLE 404 OR SOME SHIT
+        const targetName = path.replace('/', '') || 'home';
+        const newTarget = this.#getTargetObject(targetName) || this.#getTargetObject('404');
+        if (!newTarget) return;
 
         this.isMoving = true;
         

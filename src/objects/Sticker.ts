@@ -2,7 +2,7 @@ import { PlaneBufferGeometry, MeshBasicMaterial, Mesh, Vector3 } from 'three';
 import { Text } from '@/objects';
 
 export default class Sticker extends Mesh {
-    constructor(texts: { title: string; label: string; }, targetSize: Vector3) {
+    constructor(texts: { title: string; label?: string; }, targetSize: Vector3) {
         super();
 
         const scale = 0.65;

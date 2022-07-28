@@ -18,11 +18,11 @@ export default class Poster extends Group {
             this.add(scene);
         });
 
-        this.name = '/poster';
+        this.name = '404';
 
         this.addEventListener('click', (e) => {
             e.stopPropagation();
-            router.goTo('/poster');
+            router.goTo(this.name);
         });
 
         interactionManager.add(this);

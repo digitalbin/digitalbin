@@ -1,27 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>digitalbin's analogous</title>
+<!DOCTYPE html><html lang="en"><head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>digitalbin's analogue catalogue</title>
     </head>
     <body>
-        <div id="app"></div>
+        <div id="app">
+            <div class="crt-tv">
+                <div class="screen static"><article data-label="experience" data-slug="/experience/viaplay" data-name="viaplay">&gt; <h1>Viaplay</h1><br>&gt; <h2>2020 - present</h2><br>&gt; <p>In a nutshell my team and I are responsible for the logged out pages with a mission to attract new customers.</p><br>&gt; <p>Practically this has meant a huge variety of tasks but the core of our mission is building the new web app for all logged out pages.</p><br>&gt; <p>This includes all existing markets as well as new expansions including but not limited to: United States, Poland, the Baltic states and United Kingdom.</p></article><article data-label="contact" data-slug="/contact" data-name="contact">&gt; <p><a href="https://github.com/digitalbin" target="_blank">github</a></p><br>&gt; <p><a href="https://www.linkedin.com/in/digitalbin" target="_blank">linkedin</a></p></article><article data-label="project" data-url="https://billigprilla.se" data-slug="/projects/billigprilla" data-name="billig prilla">&gt; <h1>billigprilla.se</h1><br>&gt; <h2>A website for comparing snus prices online</h2><br>&gt; <p>This was built with Gatsby and graphql on the frontend, backed by an Express REST API with MongoDB.</p><br>&gt; <p>I also built a price scanner that I hosted on a raspberry pi, which updated each price a couple of times a day, which automatically regenerated the static pages if it detected any price change.</p><br>&gt; <p><b>Note: </b>This project isn’t maintained anymore so expect dead links and outdated information.</p><br>&gt; <p><a href="https://billigprilla.se" target="_blank">billigprilla.se</a></p></article><article data-label="project" data-url="https://gronalinjenbryggeri.se" data-slug="/projects/grona-linjen" data-name="gröna linjen">&gt; <h1>Gröna Linjen Bryggeri</h1><br>&gt; <h2>A brewery based in Stockholm</h2><br>&gt; <p>…known for slingin’ the illest IPAs in town. </p><br>&gt; <p>This page was built with SvelteKit and Notion as a CMS. This project also pushed me down the rabbit hole of WebGL and 3D graphics.</p><br>&gt; <p>Because of legal reasons I am obliged to disclose my partnership in the company. </p><br>&gt; <p><a href="https://gronalinjenbryggeri.se" target="_blank">gronalinjenbryggeri.se</a></p><br>&gt; <p></p></article><article data-label="experience" data-slug="/experience/hyper-island" data-name="hyper island">&gt; <h1>Hyper Island</h1><br>&gt; <h2>2014 - 2016</h2><br>&gt; <p>While I attended the Digital Data Strategy program I was first introduced to web development which caught my interest completely. So much so that I focused almost exclusively on javascript and ignored the digital data stuff I was supposed to learn.</p><br>&gt; <p>I have since then returned to Hyper Island as a guest lecturer for the Frontend Developer program.</p><br>&gt; <p></p></article><article data-label="experience" data-slug="/experience/weahead" data-name="weahead">&gt; <h1>WeAhead</h1><br>&gt; <h2>2016 - 2017</h2><br>&gt; <p>This was my first place of employment as a developer, a consultancy firm that specialize in frontend development. Many educational efforts were done here i.e. hosting various meetups and organizing monthly workshops where we got to explore bleeding edge web tech.</p><br>&gt; <p>This gave me an understanding of the vastness of web development and a chance to dip my toes in numerous tools and strategies that one can adapt early on in my career.</p></article><article data-label="about" data-slug="/about" data-name="about me">&gt; <h1>I’m digitalbin</h1><br>&gt; <p>Also known as Albin Hagström, a developer based in Stockholm. </p></article><article data-label="project" data-url="https://digitalbin.github.io/vollie" data-slug="/projects/vollie" data-name="vollie">&gt; <h1>Vollie</h1><br>&gt; <h2>A simplified, slim reader for reddit.com</h2><br>&gt; <p>This is a project made by me (dev) and my friend <a href="https://m-w.me/" target="_blank">MickeTusen</a> (design) out of boredom.</p><br>&gt; <p>It uses the unofficial reddit JSON API and is built in Svelte.</p><br>&gt; <p><a href="https://digitalbin.github.io/vollie" target="_blank">vollie</a></p><br>&gt; <p></p></article><article data-label="experience" data-slug="/experience/hitta" data-name="hitta.se">&gt; <h1>hitta.se</h1><br>&gt; <h2>2017 - 2020</h2><br>&gt; <p>Started as a consultancy gig which turned into a full time employment as I became key in the migration work of moving from an outdated tech stack to a modern SSR web app.</p><br>&gt; <p>In addition, I got the opportunity to create <i>hitta-components</i>: a component library widely used across the app.</p></article></div>
+            </div>
+        </div>
         <canvas id="three"></canvas>
         <script type="module" src="/src/main.ts"></script>
-        <svg
-            width="1"
-            height="1"
-            viewBox="0 0 1 1"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-        >
+        
+        <svg width="1" height="1" viewBox="0 0 1 1" fill="none" xmlns="http://www.w3.org/2000/svg">
             <clipPath id="crt-bezel" clipPathUnits="objectBoundingBox">
-                <path
-                    d="M0.0212178 0.024C0.0423268 0.00288864 0.317708 1.17553e-08 0.49855 1.17553e-08C0.679392 1.17553e-08 0.951764 -0.000120359 0.975882 0.024C1 0.0481204 1 0.319681 1 0.5C1 0.680319 0.99988 0.952 0.975882 0.976C0.951885 1 0.679392 1 0.49855 1C0.317708 1 0.0452152 1 0.0212178 0.976C-0.00277968 0.952 0.000108731 0.680221 0.000108731 0.5C0.000108731 0.319779 0.000108705 0.0451114 0.0212178 0.024Z"
-                />
+                <path d="M0.0212178 0.024C0.0423268 0.00288864 0.317708 1.17553e-08 0.49855 1.17553e-08C0.679392 1.17553e-08 0.951764 -0.000120359 0.975882 0.024C1 0.0481204 1 0.319681 1 0.5C1 0.680319 0.99988 0.952 0.975882 0.976C0.951885 1 0.679392 1 0.49855 1C0.317708 1 0.0452152 1 0.0212178 0.976C-0.00277968 0.952 0.000108731 0.680221 0.000108731 0.5C0.000108731 0.319779 0.000108705 0.0451114 0.0212178 0.024Z"></path>
             </clipPath>
         </svg>
-    </body>
-</html>
+    
+</body></html>
