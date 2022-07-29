@@ -34,12 +34,12 @@ export default class VHSTape extends GLTFItem {
         this.userData.print = {
             on: () => {
                 element.classList.add('active');
-                screen.classList.remove('static');
+                screen.classList.add('active');
                 typeIt.go();
             },
             off: () => {
                 typeIt.pause().reset();
-                screen.classList.add('static');
+                screen.classList.remove('active');
                 element.classList.remove('active');
             },
         };

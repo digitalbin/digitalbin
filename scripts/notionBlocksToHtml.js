@@ -34,9 +34,12 @@ export default function notionBlocksToHtml(blocks) {
             },
         );
         if (!textContent.length) return null;
-        return `> <${topLevelElement}>${textContent.join(
-            '',
-        )}</${topLevelElement}>`;
+        if (topLevelElement) {
+            return `> <${topLevelElement}>${textContent.join(
+                '',
+            )}</${topLevelElement}>`;
+        }
+        return textContent.join('');
     });
     return htmls.join('<br>');
 }
