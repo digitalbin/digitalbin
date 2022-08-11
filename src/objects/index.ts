@@ -9,3 +9,4 @@ export { default as VHSTape } from './VHSTape';
 export { default as VHSTapes } from './VHSTapes';
 export { default as LightBulb } from './LightBulb';
 export { default as Poster } from './Poster';
+export { default as World } from './World';

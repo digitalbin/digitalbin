@@ -14,7 +14,7 @@ export default class VHSTape extends GLTFItem {
         const { name = '', label } = element.dataset;
         super('VHS');
         VHSTape.#index++;
-
+        
         this.name = slugify(name, { strict: true });
         this.userData = {
             ...this.userData,
