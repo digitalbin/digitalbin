@@ -2,18 +2,20 @@ import gsap from 'gsap';
 import slugify from 'slugify';
 import { MathUtils } from 'three';
 import { GLTFItem, Sticker } from '@/objects';
-import { router } from '@/lib';
+import World from '@/World';
 import TypeIt from 'typeit';
 
 export default class VHSTape extends GLTFItem {
-    static #index = -1;
-    declare rotationOffset: number;
-    declare hoverAnimation: gsap.core.Tween;
+    world: World;
+    rotationOffset: number;
+    hoverAnimation: gsap.core.Tween;
 
-    constructor(element: HTMLElement) {
+    constructor(element: HTMLElement, index: number) {
         const { name = '', label } = element.dataset;
         super('VHS');
-        VHSTape.#index++;
+
+        this.world = new World();
+        this.world.interactionManager.add(this);
         
         this.name = slugify(name, { strict: true });
         this.userData = {
@@ -44,7 +46,7 @@ export default class VHSTape extends GLTFItem {
             },
         };
 
-        this.position.setY(VHSTape.#index * this.userData.size.y);
+        this.position.setY(index * this.userData.size.y);
         this.rotationOffset = MathUtils.randFloat(
             MathUtils.degToRad(-30),
             MathUtils.degToRad(30),
@@ -70,7 +72,7 @@ export default class VHSTape extends GLTFItem {
 
     onClick = (e: any) => {
         e.stopPropagation();
-        router.goTo(this.name);
+        this.world.router.goTo(this.name);
     };
 
     onHover = (e: any) => {

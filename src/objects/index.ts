@@ -1,4 +1,3 @@
-export { default as CameraControls } from '../setup/CameraControls';
 export { default as Room } from './Room';
 export { default as Sticker } from './Sticker';
 export { default as Text } from './Text';
@@ -9,4 +8,3 @@ export { default as VHSTape } from './VHSTape';
 export { default as VHSTapes } from './VHSTapes';
 export { default as LightBulb } from './LightBulb';
 export { default as Poster } from './Poster';
-export { default as World } from './World';

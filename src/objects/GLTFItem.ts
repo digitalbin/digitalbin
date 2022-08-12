@@ -2,8 +2,7 @@ import { Group } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { getSize } from '@/utils';
 // @ts-expect-error
-// import GLB from '@/assets/vhs_vcr_crt.glb'; // ALL WHITE WITH GRAY EDGES OBJECTS
-import GLB from '@/assets/vhs_vcr_crt2.glb';
+import GLB from '@/assets/vhs_vcr_crt.glb';
 
 export default class GLTFItem extends Group {
     static #model: Group;
@@ -24,7 +23,7 @@ export default class GLTFItem extends Group {
         return object || console.warn('No model with that key: ', key);
     }
 
-    static async init() {
+    static async preloadModel() {
         if (!GLTFItem.#model) {
             const loader = new GLTFLoader();
             const gltf = await loader.loadAsync(GLB);
