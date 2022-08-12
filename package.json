@@ -7,7 +7,7 @@
     "dev": "vite",
     "predev": "node ./scripts",
     "build": "tsc && vite build",
-    "prebuild": "node ./scripts.js",
+    "prebuild": "node ./scripts",
     "preview": "vite preview"
   },
   "devDependencies": {
