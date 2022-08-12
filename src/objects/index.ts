@@ -1,4 +1,3 @@
-export { default as CameraControls } from '../setup/CameraControls';
 export { default as Room } from './Room';
 export { default as Sticker } from './Sticker';
 export { default as Text } from './Text';

@@ -1,63 +1,52 @@
 import gsap from 'gsap';
+import slugify from 'slugify';
 import { MathUtils } from 'three';
 import { GLTFItem, Sticker } from '@/objects';
-import { router } from '@/lib';
-import { notionBlocksToHtml } from '@/utils';
+import World from '@/World';
 import TypeIt from 'typeit';
 
-interface PageItem {
-    name: string;
-    slug: string;
-    page: [];
-    pageType: string;
-    url: string;
-}
-
 export default class VHSTape extends GLTFItem {
-    static #index = -1;
+    world: World;
     rotationOffset: number;
     hoverAnimation: gsap.core.Tween;
 
-    constructor({ name, slug, page, pageType /* url */ }: PageItem) {
+    constructor(element: HTMLElement, index: number) {
+        const { name = '', label } = element.dataset;
         super('VHS');
-        VHSTape.#index++;
 
-        this.name = slug;
+        this.world = new World();
+        this.world.interactionManager.add(this);
+        
+        this.name = slugify(name, { strict: true });
         this.userData = {
             ...this.userData,
+            ...element.dataset,
             active: false,
         };
 
-        const screen = document.querySelector('div.screen') as HTMLDivElement;
+        const screen = document.querySelector('div.screen') as HTMLElement;
 
-        const elm = document.createElement('article');
-        elm.classList.add('crt');
-        // elm.style.display = 'none';
-        elm.innerHTML = notionBlocksToHtml(page);
-
-        screen.appendChild(elm);
-
-        // const typeIt = new (TypeIt as any)(elm, {
-        //     lifeLike: false,
-        //     speed: 10,
-        //     startDelay: 0,
-        //     cursorChar: '<span style="padding-left: .3rem">▊</span>',
-        // });
+        const typeIt = new (TypeIt as any)(element, {
+            lifeLike: false,
+            speed: 10,
+            startDelay: 0,
+            cursorChar: '<span style="padding-left: .3rem">▊</span>',
+        });
 
         this.userData.print = {
             on: () => {
-                elm.style.display = 'block';
-                screen.classList.remove('static');
-                // typeIt.go();
+                element.classList.add('active');
+                screen.classList.add('active');
+                typeIt.go();
             },
             off: () => {
-                // typeIt.pause().reset();
-                screen.classList.add('static');
-                elm.style.display = 'none';
+                typeIt.pause().reset();
+                screen.classList.remove('active');
+                element.classList.remove('active');
             },
         };
 
-        this.position.setY(VHSTape.#index * this.userData.size.y);
+        this.position.setY(index * this.userData.size.y);
         this.rotationOffset = MathUtils.randFloat(
             MathUtils.degToRad(-30),
             MathUtils.degToRad(30),
@@ -65,7 +54,7 @@ export default class VHSTape extends GLTFItem {
         this.rotateY(this.rotationOffset);
 
         const sticker = new Sticker(
-            { title: name, label: pageType },
+            { title: name, label },
             this.userData.size,
         );
         this.add(sticker);
@@ -83,7 +72,7 @@ export default class VHSTape extends GLTFItem {
 
     onClick = (e: any) => {
         e.stopPropagation();
-        router.goTo(this.name);
+        this.world.router.goTo(this.name);
     };
 
     onHover = (e: any) => {

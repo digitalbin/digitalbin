@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { GLTFItem } from '@/objects';
-import { interactionManager, router } from '@/lib';
+import World from '@/World';
 
 export default class EjectButton extends GLTFItem {
     constructor() {
@@ -18,10 +18,11 @@ export default class EjectButton extends GLTFItem {
             else hoverAnimation.reverse();
         }
 
-        this.addEventListener('click', () => router.goTo('/'));
+        const world = new World();
+        this.addEventListener('click', () => world.router.goTo('/'));
         this.addEventListener('mouseover', onHover);
         this.addEventListener('mouseout', onHover);
 
-        interactionManager.add(this);
+        world.interactionManager.add(this);
     }
 }

@@ -23,13 +23,14 @@ export default class Text extends Object3D {
         _text.anchorY = 'middle';
         _text.depthOffset = -1;
         _text.color = 0x111827;
+
         _text.sync();
         this.add(_text);
     }
 
-    static init() {
+    static preloadFonts() {
         return new Promise((resolve, _reject) => {
-            preloadFont({ font: UbuntuMono }, () => {});
+            // preloadFont({ font: UbuntuMono }, () => {});
             let done = 0;
             fonts.forEach(font => {
                 preloadFont({

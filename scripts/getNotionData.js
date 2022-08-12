@@ -1,5 +1,3 @@
-import 'dotenv/config';
-import fs from 'fs';
 import { Client } from '@notionhq/client';
 
 const auth = process.env.NOTION_SECRET_KEY;
@@ -12,7 +10,7 @@ async function populatePage(pageData) {
 	return { ...pageData, page: results };
 }
 
-function extract(pageData) {
+function extractProperties(pageData) {
     const properties = Object.entries(pageData.properties).reduce((props, [key, prop]) => {
         const val = prop[prop.type];
         return {
@@ -27,20 +25,19 @@ function extract(pageData) {
     }
 }
 
-async function queryDb() {
+export default async function getNotionData() {
     try {
         const { results } = await notion.databases.query({
             database_id: DB_ID,
+            sorts: [{
+                property: 'order',
+                direction: 'ascending'
+            }]
         });
         const populated = await Promise.all(results.map(populatePage));
-        const extracted = populated.map(extract);
-        fs.writeFileSync(
-            new URL('./src/data/pages.json', import.meta.url).pathname,
-            JSON.stringify(extracted, null, 2)
-        );
+        const extracted = populated.map(extractProperties);
+        return extracted;
     } catch (err) {
-        console.log('Error getting notion data: ', err);
+        throw new Error('Error getting notion data: ', err);
     }
 }
-
-queryDb();

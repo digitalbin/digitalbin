@@ -1,3 +1,2 @@
-export { default as router } from './router';
-export { default as animate } from './animate';
-export { default as interactionManager } from './interactionManager';
+export { default as Router } from './Router';
+export { default as InteractionManager } from './InteractionManager';
