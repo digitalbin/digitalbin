@@ -162,10 +162,10 @@ camelcase-css@^2.0.1:
   resolved "https://registry.yarnpkg.com/camelcase-css/-/camelcase-css-2.0.1.tgz#ee978f6947914cc30c6b44741b6ed1df7f043fd5"
   integrity sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==
 
-camera-controls@^1.34.6:
-  version "1.34.6"
-  resolved "https://registry.yarnpkg.com/camera-controls/-/camera-controls-1.34.6.tgz#555fde209d91356e86824cd80d3062d9cb86a107"
-  integrity sha512-dmXSPtzbuBC1053pXphOJz3Y9VVZpjWaoH2Cn2OEaJS34BF7owZ75H0JhFWQiZaUjYP42pdYDQDC8TgK/Gtxjw==
+camera-controls@^1.36.1:
+  version "1.36.1"
+  resolved "https://registry.yarnpkg.com/camera-controls/-/camera-controls-1.36.1.tgz#90e19123c49fd7b379d6d25783eb0870e91264e8"
+  integrity sha512-muYZT4bgA9iR/lfZwM1TLM/GPttAlRM+fDCjg9qsmH4omDMefGF8/Q5QFkadRGCeCOTFESGYXcOhqV/tt4z6fQ==
 
 caniuse-lite@^1.0.30001335, caniuse-lite@^1.0.30001358:
   version "1.0.30001359"

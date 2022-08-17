@@ -23,7 +23,7 @@
     "vite": "^2.9.9"
   },
   "dependencies": {
-    "camera-controls": "^1.34.6",
+    "camera-controls": "^1.36.1",
     "gsap": "^3.10.4",
     "slugify": "^1.6.5",
     "three": "^0.141.0",

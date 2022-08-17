@@ -44,6 +44,9 @@ export default class World {
 
         window.addEventListener('mousemove', this.render);
         window.addEventListener('resize', this.onWindowResize, false);
+        window.addEventListener('click', () => {
+            this.router.handleCurrentPath();
+        }, { once: true });
     }
 
     render = () => {
@@ -73,7 +76,13 @@ export default class World {
         const tvSet = new TVSet();
         const vhsTapes = new VHSTapes(this.scene, tvSet);
 
-        this.scene.add(room, lightBulb, poster, tvSet, vhsTapes);
+        this.scene.add(
+            room,
+            lightBulb,
+            poster,
+            tvSet,
+            vhsTapes
+        );
         this.cssScene.add(tvSet.css3dObject);
     };
 
@@ -88,7 +97,6 @@ export default class World {
     initialize = async () => {
         await Promise.all([Text.preloadFonts(), GLTFItem.preloadModel()]);
         this.generateItems();
-        this.router.handleCurrentPath();
         this.tick();
     };
 }

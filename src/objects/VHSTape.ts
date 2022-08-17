@@ -25,22 +25,27 @@ export default class VHSTape extends GLTFItem {
         };
 
         const screen = document.querySelector('div.screen') as HTMLElement;
+        const hasForm = element.querySelector('form');
 
-        const typeIt = new (TypeIt as any)(element, {
-            lifeLike: false,
-            speed: 10,
-            startDelay: 0,
-            cursorChar: '<span style="padding-left: .3rem">▊</span>',
-        });
+        let typeIt: any;
+
+        if (!hasForm) {
+            typeIt = new (TypeIt as any)(element, {
+                lifeLike: false,
+                speed: .1,
+                startDelay: 0,
+                cursorChar: '<span style="padding-left: .3rem">▊</span>',
+            });
+        }
 
         this.userData.print = {
             on: () => {
                 element.classList.add('active');
                 screen.classList.add('active');
-                typeIt.go();
+                typeIt?.go();
             },
             off: () => {
-                typeIt.pause().reset();
+                typeIt?.pause().reset();
                 screen.classList.remove('active');
                 element.classList.remove('active');
             },

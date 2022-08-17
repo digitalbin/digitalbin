@@ -58,7 +58,7 @@ div.screen:not(.active) {
 article {
     @apply p-6;
     @apply text-white;
-    @apply blur-[0.5px];
+    /* @apply blur-[0.5px]; */
     @apply absolute inset-0;
     @apply hidden;
 }
@@ -97,9 +97,11 @@ a {
 form {
     @apply flex flex-col gap-4;
 }
+
 label {
-    @apply flex flex-col gap-2;
+    @apply flex flex-col gap-2 text-sm;
 }
+
 input, textarea {
     @apply 
         bg-transparent
@@ -110,6 +112,11 @@ input, textarea {
         px-2
         py-1;
 }
+
 button[type=submit] {
     @apply bg-gray-200 text-gray-900 self-start px-4;
+}
+
+p.status {
+    @apply text-base font-bold;
 }

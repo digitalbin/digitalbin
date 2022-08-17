@@ -16,7 +16,6 @@ export default class CameraControls extends _CameraControls {
 
     async navigateTo(target: THREE.Object3D) {
         this.removeControlBoundaries();
-        this.enabled = false;
 
         this.setPosition(-100, 100, 100, this.animate);
         await this.setTarget(
@@ -28,7 +27,6 @@ export default class CameraControls extends _CameraControls {
         await this.fitToBox(target, this.animate);
         
         this.setControlBoundaries();
-        this.enabled = true;
     }
 
     removeControlBoundaries() {
@@ -40,6 +38,8 @@ export default class CameraControls extends _CameraControls {
 
         this.minDistance = 0;
         this.maxDistance = Infinity;
+
+        this.enabled = false;
     }
 
     setControlBoundaries() {
@@ -53,5 +53,7 @@ export default class CameraControls extends _CameraControls {
 
         this.minDistance = this.distance;
         this.maxDistance = this.distance;
+
+        this.enabled = true;
     }
 }
