@@ -43,14 +43,18 @@ export default class Router {
     };
 
     handleCurrentPath = () => {
-        if (this.isMoving) return;
-        const path = window.location.pathname;
+        const path = this.getCurrentPath();
+        if (this.currentTarget?.name === path || this.isMoving) return;
         this.#handleAnimation(path);
     };
 
     goTo = (path: string) => {
-        if (path === window.location.pathname || this.isMoving) return;
+        if (path === this.getCurrentPath() || this.isMoving) return;
         window.history.pushState({}, '', path);
         this.#handleAnimation(path);
     };
+
+    getCurrentPath = (): string => {
+        return window.location.pathname.replace('/', '');
+    }
 }

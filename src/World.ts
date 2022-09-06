@@ -67,6 +67,9 @@ export default class World {
     ready = () => {
         this.isReady = true;
         document.body.classList.remove('brtl');
+        
+        // Won't work in safari without document interaction
+        // this.router.handleCurrentPath();
     };
 
     generateItems = () => {

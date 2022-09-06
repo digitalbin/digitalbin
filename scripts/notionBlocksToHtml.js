@@ -35,11 +35,11 @@ export default function notionBlocksToHtml(blocks) {
         );
         if (!textContent.length) return null;
         if (topLevelElement) {
-            return `> <${topLevelElement}>${textContent.join(
+            return `<${topLevelElement}>${textContent.join(
                 '',
             )}</${topLevelElement}>`;
         }
         return textContent.join('');
     });
-    return htmls.join('<br>');
+    return htmls.join('');
 }
