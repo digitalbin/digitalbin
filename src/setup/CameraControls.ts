@@ -4,6 +4,7 @@ import * as THREE from 'three';
 _CameraControls.install({ THREE });
 export default class CameraControls extends _CameraControls {
     animate = true;
+    declare targetObject: THREE.Object3D;
 
     constructor(camera: THREE.PerspectiveCamera, renderer: THREE.Renderer) {
         super(camera, renderer.domElement);
@@ -15,6 +16,8 @@ export default class CameraControls extends _CameraControls {
     }
 
     async navigateTo(target: THREE.Object3D) {
+        this.targetObject = target;
+
         this.removeControlBoundaries();
 
         this.setPosition(-100, 100, 100, this.animate);

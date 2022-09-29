@@ -1,0 +1,16 @@
+const innerHTML = `
+    <div>
+        <a href="/minimal.html">&#62;</a>
+    </div>
+`;
+
+export default class BoringButton extends HTMLElement {
+    constructor() {
+        super();
+        this.innerHTML = innerHTML;
+        window.addEventListener('onroutechange', () => {
+            const route = window.location.pathname;
+            this.style.display = route === '/' ? 'block' : 'none';
+        })
+    }
+}

@@ -9,7 +9,7 @@ export default class VHSTapes extends Group {
         
         const viaPos = new Vector3().setY(tvSet.vcr.userData.position.y);
         const endPos = tvSet.vcr.userData.position.clone();
-        const infoNodes = Array.from(document.querySelectorAll('article')).reverse();
+        const infoNodes = Array.from(document.querySelectorAll('#app article')).reverse() as HTMLElement[];
         infoNodes.forEach((node: HTMLElement, index) => {
             const vhsTape = new VHSTape(node, index);
             this.attach(vhsTape);
@@ -42,6 +42,6 @@ export default class VHSTapes extends Group {
 
         this.position.setY(this.children[0].userData.size.y / 2);
         this.position.setZ(-10);
-        this.name = 'home';
+        this.name = 'index';
     }
 }

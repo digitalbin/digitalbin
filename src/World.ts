@@ -22,6 +22,7 @@ export default class World {
 
     router!: Router;
     interactionManager!: InteractionManager;
+    onReady?: () => void;
 
     isReady = false;
     renderer = new Renderer();
@@ -44,57 +45,51 @@ export default class World {
 
         window.addEventListener('mousemove', this.render);
         window.addEventListener('resize', this.onWindowResize, false);
-        window.addEventListener('click', () => {
-            this.router.handleCurrentPath();
-        }, { once: true });
     }
 
-    render = () => {
+    private render = () => {
         this.renderer.render(this.scene, this.camera);
         this.css3Drenderer.render(this.cssScene, this.camera);
     };
 
-    tick = () => {
+    private tick = () => {
         const delta = this.clock.getDelta();
         const hasCameraUpdate = this.cameraControls.update(delta);
         this.interactionManager.update();
 
         if (this.router.isMoving || hasCameraUpdate) this.render();
-        if (!this.isReady && this.scene.children.length > 0) this.ready();
+        if (!this.isReady && this.scene.children.length > 0) this.setIsReady();
+
         requestAnimationFrame(this.tick);
     };
 
-    ready = () => {
+    private setIsReady = () => {
         this.isReady = true;
-        document.body.classList.remove('brtl');
-        
-        // Won't work in safari without document interaction
-        // this.router.handleCurrentPath();
-    };
+        this.css3Drenderer.domElement.style.visibility = 'visible';
+        this.onReady?.();
+    }
 
-    generateItems = () => {
+    private generateItems = () => {
         const room = new Room();
         const lightBulb = new LightBulb();
         const poster = new Poster();
         const tvSet = new TVSet();
         const vhsTapes = new VHSTapes(this.scene, tvSet);
 
-        this.scene.add(
-            room,
-            lightBulb,
-            poster,
-            tvSet,
-            vhsTapes
-        );
+        this.scene.add(room, lightBulb, poster, tvSet, vhsTapes);
         this.cssScene.add(tvSet.css3dObject);
     };
 
-    onWindowResize = () => {
+    private onWindowResize = () => {
         this.camera.aspect = window.innerWidth / window.innerHeight;
         this.camera.updateProjectionMatrix();
         this.renderer.setSize(window.innerWidth, window.innerHeight);
         this.css3Drenderer.setSize(window.innerWidth, window.innerHeight);
         this.render();
+    };
+
+    start = () => {
+        this.router.handleCurrentPath();
     };
 
     initialize = async () => {

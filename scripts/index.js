@@ -6,21 +6,31 @@ import notionBlocksToHtml from './notionBlocksToHtml.js';
 
 const pages = await getNotionData();
 
-const templateHtml = fs
-    .readFileSync(new URL('../template.html', import.meta.url).pathname)
+let html = fs
+    .readFileSync(new URL('../index.html', import.meta.url).pathname)
     .toString();
 
-const $ = cheerio.load(templateHtml);
+const $ = cheerio.load(html);
 const screen = $('#app div.screen');
 
-pages.forEach(({ page, ...props }) => {
+const articleElements = pages.map(({ page, ...props }) => {
     const article = $('<article />').append(notionBlocksToHtml(page));
     Object.entries(props).forEach(([key, val]) => {
         article.attr({ [`data-${key}`]: val });
     });
-    screen.append(article);
+    return article;
 });
 
-const html = $.html();
+screen.html(articleElements.join(''));
+
+let minHtml = fs
+    .readFileSync(new URL('../minimal.html', import.meta.url).pathname)
+    .toString();
+const _$ = cheerio.load(minHtml);
+_$('body').html(articleElements.join(''));
+
+html = $.html();
+minHtml = _$.html();
 
 fs.writeFileSync(new URL('../index.html', import.meta.url).pathname, html);
+fs.writeFileSync(new URL('../minimal.html', import.meta.url).pathname, minHtml);

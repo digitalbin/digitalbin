@@ -43,7 +43,7 @@ export default class TypeIt {
 
         for (const textBlock of this.textBlocks) {
             if (this.stopped) break;
-            textBlock.style.visibility = 'visible';
+            if (textBlock.style?.visibility) textBlock.style.visibility = 'visible';
             await this.traverse(textBlock);
         }
 

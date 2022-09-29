@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=block');
 
 @import './crt.css';
+@import './components.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -59,7 +60,6 @@ div.screen:not(.active) {
 article {
     @apply p-6;
     @apply text-white;
-    /* @apply blur-[0.5px]; */
     @apply absolute inset-0;
     @apply hidden;
 }
@@ -93,31 +93,4 @@ p {
 
 a {
     @apply font-bold underline;
-}
-
-form {
-    @apply flex flex-col gap-4;
-}
-
-label {
-    @apply flex flex-col gap-2 text-sm;
-}
-
-input, textarea {
-    @apply 
-        bg-transparent
-        border-2
-        border-white
-        ring-white
-        outline-none
-        px-2
-        py-1;
-}
-
-button[type=submit] {
-    @apply bg-white text-gray-900 self-start px-4 font-bold;
-}
-
-p.status {
-    @apply text-base font-bold;
 }

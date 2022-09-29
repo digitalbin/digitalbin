@@ -1,0 +1,71 @@
+/* CONTACT FORM */
+contact-form form {
+    @apply flex flex-col gap-4;
+}
+
+contact-form label {
+    @apply flex flex-col gap-2 text-sm;
+}
+
+contact-form input, contact-form textarea {
+    @apply 
+        bg-transparent
+        border-2
+        border-white
+        ring-white
+        outline-none
+        px-2
+        py-1;
+}
+
+contact-form button[type=submit] {
+    @apply bg-white text-gray-900 self-start px-4 font-bold;
+}
+
+contact-form p.status {
+    @apply text-base font-bold;
+}
+
+
+/* LOADING SCREEN */
+loading-screen div {
+    @apply absolute inset-0 z-50 bg-white;
+    @apply flex flex-col items-center justify-center gap-16;
+    @apply px-6;
+    @apply text-gray-900;
+}
+
+loading-screen button {
+    @apply disabled:opacity-0;
+    @apply underline text-4xl font-bold;
+    @apply transition-opacity duration-1000;
+}
+
+loading-screen svg {
+    @apply max-w-4xl;
+}
+
+loading-screen svg path {
+    @apply fill-gray-900;
+}
+
+/* BORING BUTTON */
+boring-button div {
+    @apply fixed bottom-0 right-0 z-40;
+}
+
+boring-button a {
+    @apply px-4 py-2;
+    @apply bg-white border-gray-900;
+    @apply border-t border-l;
+    @apply no-underline block;
+}
+
+boring-button a:hover:before {
+    @apply inline;
+}
+
+boring-button a:before {
+    content: 'Simple version ';
+    @apply hidden;
+}

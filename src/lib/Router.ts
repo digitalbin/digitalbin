@@ -14,11 +14,13 @@ export default class Router {
         this.cameraControls = cameraControls;
     }
 
-    #handleAnimation = async (path: string) => {
-        const targetName = path.replace('/', '') || 'home';
+    #handleAnimation = async () => {
+        const targetName = this.getCurrentPath();
         const newTarget =
             this.#getTargetObject(targetName) || this.#getTargetObject('404');
-        if (!newTarget) return;
+        if (!newTarget || this.isMoving) return;
+
+        this.onRouteChange();
 
         this.isMoving = true;
 
@@ -36,6 +38,12 @@ export default class Router {
 
         this.currentTarget = newTarget;
         this.isMoving = false;
+        
+        // Check if user hasn't pushed back before the animation is done
+        const currentPath = this.getCurrentPath();
+        if (targetName !== currentPath && newTarget.name !== '404') {
+            this.handleCurrentPath();
+        }
     };
 
     #getTargetObject = (name: string) => {
@@ -45,16 +53,21 @@ export default class Router {
     handleCurrentPath = () => {
         const path = this.getCurrentPath();
         if (this.currentTarget?.name === path || this.isMoving) return;
-        this.#handleAnimation(path);
+        this.#handleAnimation();
     };
 
     goTo = (path: string) => {
         if (path === this.getCurrentPath() || this.isMoving) return;
         window.history.pushState({}, '', path);
-        this.#handleAnimation(path);
+        this.#handleAnimation();
     };
 
     getCurrentPath = (): string => {
-        return window.location.pathname.replace('/', '');
+        return window.location.pathname.replace('/', '') || 'index';
+    }
+
+    onRouteChange = () => {
+        const event = new Event('onroutechange');
+        window.dispatchEvent(event);
     }
 }
