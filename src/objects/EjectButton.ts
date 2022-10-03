@@ -19,7 +19,7 @@ export default class EjectButton extends GLTFItem {
         }
 
         const world = new World();
-        this.addEventListener('click', () => world.router.goTo('/'));
+        this.addEventListener('click', () => world.router.goTo());
         this.addEventListener('mouseover', onHover);
         this.addEventListener('mouseout', onHover);
 

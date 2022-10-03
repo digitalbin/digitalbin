@@ -56,14 +56,14 @@ export default class Router {
         this.#handleAnimation();
     };
 
-    goTo = (path: string) => {
+    goTo = (path = import.meta.env.BASE_URL) => {
         if (path === this.getCurrentPath() || this.isMoving) return;
         window.history.pushState({}, '', path);
         this.#handleAnimation();
     };
 
     getCurrentPath = (): string => {
-        return window.location.pathname.replace('/', '') || 'index';
+        return window.location.pathname.replace(import.meta.env.BASE_URL, '') || 'index';
     }
 
     onRouteChange = () => {

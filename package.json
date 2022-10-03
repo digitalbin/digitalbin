@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "predev": "node ./scripts",
-    "build": "tsc && vite build --base=/digitalbin",
+    "build": "tsc && vite build --base=/digitalbin/",
     "prebuild": "node ./scripts",
     "preview": "vite preview"
   },
