@@ -10,7 +10,7 @@ export default class BoringButton extends HTMLElement {
         this.innerHTML = innerHTML;
         window.addEventListener('onroutechange', () => {
             const route = window.location.pathname;
-            this.style.display = route === '/' ? 'block' : 'none';
+            this.style.display = route === import.meta.env.BASE_URL ? 'block' : 'none';
         })
     }
 }
