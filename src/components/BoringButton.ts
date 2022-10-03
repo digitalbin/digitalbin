@@ -1,6 +1,6 @@
 const innerHTML = `
     <div>
-        <a href="${import.meta.env.BASE_URL}/minimal.html">&#62;</a>
+        <a href="${import.meta.env.BASE_URL}minimal.html">&#62;</a>
     </div>
 `;
 
