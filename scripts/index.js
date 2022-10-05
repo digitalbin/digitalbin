@@ -27,7 +27,7 @@ let minHtml = fs
     .readFileSync(new URL('../minimal.html', import.meta.url).pathname)
     .toString();
 const _$ = cheerio.load(minHtml);
-_$('body').html(articleElements.join(''));
+_$('div.content').html(articleElements.join(''));
 
 html = $.html();
 minHtml = _$.html();

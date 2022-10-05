@@ -21,7 +21,7 @@ export default class Text extends Object3D {
         _text.fontSize = size;
         _text.anchorX = 'center';
         _text.anchorY = 'middle';
-        _text.depthOffset = -1;
+        _text.depthOffset = -10;
         _text.color = 0x111827;
 
         _text.sync();
