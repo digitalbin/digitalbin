@@ -49,6 +49,15 @@ loading-screen svg path {
     @apply fill-gray-900;
 }
 
+loading-screen svg path.cursor {
+    animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
 
 /* BORING BUTTON */
 boring-button div {

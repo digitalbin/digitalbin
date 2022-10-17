@@ -1,4 +1,4 @@
-import gsap from 'gsap';
+// import gsap from 'gsap';
 
 const innerHTML = `
 <div>
@@ -43,7 +43,7 @@ const innerHTML = `
 `;
 
 export default class LoadingScreen extends HTMLElement {
-    declare timeline: gsap.core.Timeline;
+    // declare timeline: gsap.core.Timeline;
     btn: HTMLButtonElement;
 
     constructor() {
@@ -55,32 +55,32 @@ export default class LoadingScreen extends HTMLElement {
     }
 
     connectedCallback() {
-        gsap.set('svg#loading path', {
-            opacity: 0,
-        });
+        // gsap.set('svg#loading path', {
+        //     opacity: 0,
+        // });
 
-        this.timeline = gsap
-            .timeline()
-            .to('svg#loading path', {
-                opacity: 1,
-                stagger: 0.08,
-                duration: 0,
-            })
-            .to('svg#loading path.cursor', {
-                opacity: 0,
-                duration: 0,
-                delay: 0.5,
-                repeatDelay: 0.5,
-                yoyo: true,
-                repeat: -1,
-            });
+        // this.timeline = gsap
+        //     .timeline()
+        //     .to('svg#loading path', {
+        //         opacity: 1,
+        //         stagger: 0.08,
+        //         duration: 0,
+        //     })
+        //     .to('svg#loading path.cursor', {
+        //         opacity: 0,
+        //         duration: 0,
+        //         delay: 0.5,
+        //         repeatDelay: 0.5,
+        //         yoyo: true,
+        //         repeat: -1,
+        //     });
 
         // if (window.location.pathname === '/minimal') this.destroy();
     }
 
     disconnectedCallback() {
         this.btn.removeEventListener('click', this.handleOnStart);
-        this.timeline.kill();
+        // this.timeline.kill();
     }
 
     attributeChangedCallback(name: string) {

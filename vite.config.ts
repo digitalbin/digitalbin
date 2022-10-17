@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+// import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
+    // plugins: [visualizer()],
     assetsInclude: ['**/*.glb'],
     resolve: {
         alias: {

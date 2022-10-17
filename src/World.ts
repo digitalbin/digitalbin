@@ -67,7 +67,7 @@ export default class World {
         this.isReady = true;
         this.css3Drenderer.domElement.style.visibility = 'visible';
         this.onReady?.();
-    }
+    };
 
     private generateItems = () => {
         const room = new Room();
