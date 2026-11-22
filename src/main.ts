@@ -1,18 +1,21 @@
 import type { LoadingScreen } from '@/components';
-import World from '@/World';
-
-const world = new World();
 
 const loadingScreen = document.querySelector('loading-screen') as LoadingScreen;
 
-world.initialize();
+// three.js and the scene are most of the bundle, so they load in their own
+// chunk while the loading screen is already on screen.
+import('@/World').then(({ default: World }) => {
+    const world = new World();
 
-world.onReady = () => {
-    loadingScreen.setAttribute('ready', '');
-}
+    world.onReady = () => {
+        loadingScreen.setAttribute('ready', '');
+    };
 
-loadingScreen.addEventListener('onstart', () => {
-    world.start();
+    loadingScreen.addEventListener('onstart', () => {
+        world.start();
+    });
+
+    world.initialize();
 });
 
 const favIcons = [
