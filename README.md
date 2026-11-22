@@ -10,7 +10,7 @@ npm run dev    # dev server, reloads when content changes
 npm run build  # type check + build to ./dist
 ```
 
-Pushing to `master` builds and deploys to GitHub Pages.
+Pushing to `main` builds and deploys to GitHub Pages.
 
 ## Content
 
