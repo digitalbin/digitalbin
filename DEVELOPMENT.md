@@ -31,3 +31,10 @@ Regular markdown. Inline HTML works too, e.g. `<contact-form></contact-form>`.
 ```
 
 To add a tape, add a file. To remove one, delete the file.
+
+## Profile readme
+
+`README.md` is what shows on the GitHub profile. Its header and the tape
+spines are generated into `.github/readme/` – after adding or renaming a
+project in `content/`, run `npm run readme` and paste the printed tape lines
+into `README.md`.
