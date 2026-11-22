@@ -1,4 +1,4 @@
-import { CSS3DRenderer as _CSS3DRenderer } from 'three/examples/jsm/renderers/CSS3DRenderer';
+import { CSS3DRenderer as _CSS3DRenderer } from 'three/addons/renderers/CSS3DRenderer.js';
 
 const element = document.querySelector('#app') as HTMLElement;
 

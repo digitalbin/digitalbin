@@ -6,12 +6,12 @@ export default class CameraControls extends _CameraControls {
     animate = true;
     declare targetObject: THREE.Object3D;
 
-    constructor(camera: THREE.PerspectiveCamera, renderer: THREE.Renderer) {
+    constructor(camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer) {
         super(camera, renderer.domElement);
         this.setTarget(0, 0, 0);
         this.updateCameraUp();
 
-        this.dampingFactor = 0.07;
+        this.smoothTime = 0.3;
         this.restThreshold = 0.5;
     }
 

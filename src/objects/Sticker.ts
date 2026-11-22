@@ -1,5 +1,5 @@
 import {
-    PlaneBufferGeometry,
+    PlaneGeometry,
     MeshBasicMaterial,
     Mesh,
     Vector3,
@@ -16,7 +16,7 @@ export default class Sticker extends Mesh {
         // colorMap[texts.label] = colorMap[texts.label] || MathUtils.randInt(0, 0xffffff);
 
         const scale = 0.65;
-        this.geometry = new PlaneBufferGeometry(
+        this.geometry = new PlaneGeometry(
             targetSize.x * scale,
             targetSize.y * scale,
         );
@@ -29,8 +29,8 @@ export default class Sticker extends Mesh {
         this.add(text);
 
         // const labelText = new Text(texts.label, .1, true);
-        // // const labelGeometry = new PlaneBufferGeometry(targetSize.y * scale, .2);
-        // const labelGeometry = new PlaneBufferGeometry(targetSize.y, .2);
+        // // const labelGeometry = new PlaneGeometry(targetSize.y * scale, .2);
+        // const labelGeometry = new PlaneGeometry(targetSize.y, .2);
         // // const labelMaterial = new MeshBasicMaterial({ color: colorMap[texts.label] });
         // const labelMaterial = new MeshBasicMaterial({ color: 0xffffff });
         // const label = new Mesh(labelGeometry, labelMaterial);
