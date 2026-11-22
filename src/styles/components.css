@@ -7,7 +7,8 @@ contact-form label {
     @apply flex flex-col gap-2 text-sm;
 }
 
-contact-form input, contact-form textarea {
+contact-form input,
+contact-form textarea {
     @apply 
         bg-transparent
         border-2
@@ -16,6 +17,14 @@ contact-form input, contact-form textarea {
         outline-hidden
         px-2
         py-1;
+}
+
+contact-form input.gotcha {
+    @apply hidden;
+}
+
+contact-form button[type=submit]:disabled {
+    @apply opacity-50;
 }
 
 contact-form button[type=submit] {
@@ -78,4 +87,16 @@ boring-button a:hover:before {
 boring-button a:before {
     content: 'boring version ';
     @apply md:hidden;
+}
+
+/* KEYBOARD NAV */
+nav.tape-nav {
+    @apply sr-only;
+}
+
+nav.tape-nav:focus-within {
+    @apply not-sr-only fixed top-0 left-0 z-40;
+    @apply flex flex-col gap-1 p-4;
+    @apply bg-white text-sm;
+    @apply border-b border-r border-gray-900;
 }

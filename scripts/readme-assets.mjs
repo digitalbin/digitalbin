@@ -12,7 +12,7 @@ const INK = '#111827';
 const PAPER = '#f9fafb';
 
 /* ---------- header ---------- */
-const loadingScreen = readFileSync(new URL('src/components/LoadingScreen.ts', root), 'utf-8');
+const loadingScreen = readFileSync(new URL('index.html', root), 'utf-8');
 const letters = [...loadingScreen.matchAll(/<path class="letter" d="([^"]+)"/g)].map((m) => m[1]);
 const cursor = loadingScreen.match(/<path class="cursor" d="([^"]+)"/)[1];
 const STEP = 0.08;
