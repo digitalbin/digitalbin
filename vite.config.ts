@@ -1,9 +1,10 @@
 import { defineConfig, Plugin } from 'vite';
 import { resolve } from 'path';
 import { readdirSync, readFileSync, copyFileSync } from 'fs';
+import tailwindcss from '@tailwindcss/vite';
 import { marked } from 'marked';
 
-const contentDir = resolve(__dirname, 'content');
+const contentDir = resolve(import.meta.dirname, 'content');
 
 const escapeAttr = (value: string) =>
     value.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
@@ -59,25 +60,25 @@ function markdownContent(): Plugin {
         // GitHub Pages serves 404.html for unknown paths, which lets
         // deep links like /viaplay boot the app and route client side.
         closeBundle() {
-            const dist = resolve(__dirname, 'dist');
+            const dist = resolve(import.meta.dirname, 'dist');
             copyFileSync(resolve(dist, 'index.html'), resolve(dist, '404.html'));
         },
     };
 }
 
 export default defineConfig({
-    plugins: [markdownContent()],
+    plugins: [tailwindcss(), markdownContent()],
     assetsInclude: ['**/*.glb'],
     resolve: {
         alias: {
-            '@': resolve(__dirname, 'src'),
+            '@': resolve(import.meta.dirname, 'src'),
         },
     },
     build: {
-        rollupOptions: {
+        rolldownOptions: {
             input: {
-                main: resolve(__dirname, 'index.html'),
-                minimal: resolve(__dirname, 'minimal.html'),
+                main: resolve(import.meta.dirname, 'index.html'),
+                minimal: resolve(import.meta.dirname, 'minimal.html'),
             },
         },
     },

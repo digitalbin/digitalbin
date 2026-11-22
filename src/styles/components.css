@@ -13,7 +13,7 @@ contact-form input, contact-form textarea {
         border-2
         border-white
         ring-white
-        outline-none
+        outline-hidden
         px-2
         py-1;
 }

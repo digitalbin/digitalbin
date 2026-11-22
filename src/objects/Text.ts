@@ -1,9 +1,10 @@
 import { Object3D } from 'three';
 import { Text as TroikaText, preloadFont } from 'troika-three-text';
-import PermanentMarker from '/fonts/permanentmarker.woff';
-import Rocksalt from '/fonts/rocksalt.woff';
-import WaitingForTheSunrise from '/fonts/waitingforthesunrise.woff';
-import UbuntuMono from '/fonts/UbuntuMono-Regular.ttf';
+const font = (file: string) => `${import.meta.env.BASE_URL}fonts/${file}`;
+const PermanentMarker = font('permanentmarker.woff');
+const Rocksalt = font('rocksalt.woff');
+const WaitingForTheSunrise = font('waitingforthesunrise.woff');
+const UbuntuMono = font('UbuntuMono-Regular.ttf');
 
 const fonts = [
     PermanentMarker,
