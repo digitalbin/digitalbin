@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=block');
+@import '@fontsource/ubuntu-mono/latin-400.css';
+@import '@fontsource/ubuntu-mono/latin-700.css';
 @import 'tailwindcss' source(none);
 @import './crt.css';
 @import './components.css';

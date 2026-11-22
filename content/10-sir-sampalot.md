@@ -9,6 +9,6 @@ label: project
 
 This is a drum machine heavily utilizing the AudioContext API to preload, cache, modify and analyze the sound output from the users drumming.
 
-The app is build with Svelte, and the modifier knobs are made built with web components.
+The app is built with Svelte, and the modifier knobs are built with web components.
 
 [Sir Sampalot](https://digitalbin.github.io/sir-sampalot/)
