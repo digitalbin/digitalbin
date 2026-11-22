@@ -47,7 +47,7 @@ export default class World {
         window.addEventListener('resize', this.onWindowResize, false);
     }
 
-    private render = () => {
+    render = () => {
         this.renderer.render(this.scene, this.camera);
         this.css3Drenderer.render(this.cssScene, this.camera);
     };

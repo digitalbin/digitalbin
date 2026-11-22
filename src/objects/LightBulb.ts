@@ -1,4 +1,5 @@
 import gsap from 'gsap';
+import { reducedMotion } from '@/utils';
 import {
     Mesh,
     Group,
@@ -50,7 +51,7 @@ export default class LightBulb extends Group {
             bulb
             );
             
-        gsap.fromTo(this.rotation, {
+        if (!reducedMotion) gsap.fromTo(this.rotation, {
             z: -.1,
         }, {
             z: .1,

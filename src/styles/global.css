@@ -77,3 +77,15 @@ p {
 a {
     @apply font-bold underline;
 }
+
+@media (prefers-reduced-motion: reduce) {
+    div.screen.active,
+    div.screen.active::after,
+    loading-screen svg path.cursor {
+        animation: none;
+    }
+
+    div.screen:not(.active) {
+        background-image: none;
+    }
+}

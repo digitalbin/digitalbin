@@ -59,6 +59,8 @@ export default class VHSTape extends GLTFItem {
             z: this.userData.size.z / 4,
             paused: true,
             duration: 0.1,
+            // hover can also come from keyboard focus, when nothing else renders
+            onUpdate: () => this.world.render(),
         });
 
         this.addEventListener('click', this.onClick);

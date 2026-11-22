@@ -1,4 +1,5 @@
 import type { LoadingScreen } from '@/components';
+import { reducedMotion } from '@/utils';
 
 const loadingScreen = document.querySelector('loading-screen') as LoadingScreen;
 
@@ -26,7 +27,7 @@ const faviconElm = document.querySelector('link[rel="icon"]')
 let i = 0;
 
 setInterval(() => {
-    if (document.hidden) return;
+    if (document.hidden || reducedMotion) return;
     faviconElm?.setAttribute('href', favIcons[i]);
     i += i ? -1 : 1;
 }, 1000);
