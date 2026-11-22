@@ -5,6 +5,8 @@ label: exp.
 
 # Avanza
 
-## 2024 - 2025
+## 2024
 
-Almost a year of frontend development at Sweden’s largest platform for savings and investments.
+Sweden’s largest platform for savings and investments.
+
+I was part of the team behind “My economy”, the most visited pages on the platform.

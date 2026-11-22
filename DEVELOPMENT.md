@@ -1,6 +1,6 @@
-# digitalbin
+# Development
 
-The analogue catalogue – [digitalb.in](https://digitalb.in)
+How to run and edit [digitalb.in](https://digitalb.in).
 
 ## Develop
 
