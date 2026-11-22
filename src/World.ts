@@ -53,7 +53,10 @@ export default class World {
     };
 
     private tick = () => {
-        const delta = this.clock.getDelta();
+        // Clamp: one long frame (slow device, tab switch) would make
+        // camera-controls jump straight to its target without ever firing
+        // 'rest', leaving the router stuck in isMoving forever.
+        const delta = Math.min(this.clock.getDelta(), 0.1);
         const hasCameraUpdate = this.cameraControls.update(delta);
         this.interactionManager.update();
 

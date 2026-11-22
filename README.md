@@ -1,0 +1,33 @@
+# digitalbin
+
+The analogue catalogue – [digitalb.in](https://digitalb.in)
+
+## Develop
+
+```sh
+yarn install
+yarn dev      # dev server, reloads when content changes
+yarn build    # type check + build to ./dist
+```
+
+Pushing to `master` builds and deploys to GitHub Pages.
+
+## Content
+
+Every markdown file in [`content/`](./content) is one VHS tape. Files are
+sorted by filename, so the number prefix decides the order in the pile.
+
+```md
+---
+name: viaplay      # text on the tape sticker, also becomes the url (/viaplay)
+label: exp.
+---
+
+# Viaplay
+
+## 2020 - present
+
+Regular markdown. Inline HTML works too, e.g. `<contact-form></contact-form>`.
+```
+
+To add a tape, add a file. To remove one, delete the file.
