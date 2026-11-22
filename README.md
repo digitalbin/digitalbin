@@ -5,9 +5,9 @@ The analogue catalogue – [digitalb.in](https://digitalb.in)
 ## Develop
 
 ```sh
-yarn install
-yarn dev      # dev server, reloads when content changes
-yarn build    # type check + build to ./dist
+npm install
+npm run dev    # dev server, reloads when content changes
+npm run build  # type check + build to ./dist
 ```
 
 Pushing to `master` builds and deploys to GitHub Pages.
