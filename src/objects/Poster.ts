@@ -1,7 +1,6 @@
 import { Group } from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import World from '@/World';
-// @ts-expect-error
 // import Digitallica from '@/assets/digitallica.glb';
 // import Digitallica from '@/assets/digitallica_poster.glb';
 import Digitalbin from '@/assets/digitalbin.glb';

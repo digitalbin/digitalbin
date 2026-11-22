@@ -149,7 +149,7 @@
             -2.6208764473832513px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
     }
 }
-.crt::after {
+div.screen.active::after {
     content: ' ';
     display: block;
     position: absolute;
@@ -163,7 +163,7 @@
     pointer-events: none;
     animation: flicker 0.15s infinite;
 }
-.crt::before {
+div.screen.active::before {
     content: ' ';
     display: block;
     position: absolute;
@@ -185,6 +185,6 @@
     background-size: 100% 2px, 3px 100%;
     pointer-events: none;
 }
-.crt {
+div.screen.active {
     animation: textShadow 1.6s infinite;
 }

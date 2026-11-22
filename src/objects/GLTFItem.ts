@@ -1,7 +1,6 @@
 import { Group } from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { getSize } from '@/utils';
-// @ts-expect-error
 import GLB from '@/assets/vhs_vcr_crt.glb';
 
 export default class GLTFItem extends Group {

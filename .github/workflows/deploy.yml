@@ -1,35 +1,28 @@
 name: Deploy
 
 on:
-  repository_dispatch:
-
   push:
-    branches: [master]
+    branches: [main]
 
   workflow_dispatch:
-
-env:
-  NOTION_SECRET_KEY: ${{ secrets.NOTION_SECRET_KEY }}
-  DB_ID: ${{ secrets.DB_ID }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout master
-        uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Cache yarn & build
-        uses: actions/setup-node@v2
+      - name: Setup node
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
-          cache: 'yarn'
-          cache-dependency-path: './yarn.lock'
-      - run: yarn install
-      - run: yarn build
+          node-version: 22
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist

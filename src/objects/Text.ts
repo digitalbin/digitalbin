@@ -1,9 +1,9 @@
 import { Object3D } from 'three';
 import { Text as TroikaText, preloadFont } from 'troika-three-text';
-import PermanentMarker from '/fonts/permanentmarker.woff';
-import Rocksalt from '/fonts/rocksalt.woff';
-import WaitingForTheSunrise from '/fonts/waitingforthesunrise.woff';
-import UbuntuMono from '/fonts/UbuntuMono-Regular.ttf';
+const font = (file: string) => `${import.meta.env.BASE_URL}fonts/${file}`;
+const PermanentMarker = font('permanentmarker.woff');
+const Rocksalt = font('rocksalt.woff');
+const WaitingForTheSunrise = font('waitingforthesunrise.woff');
 
 const fonts = [
     PermanentMarker,
@@ -12,12 +12,11 @@ const fonts = [
 ];
 
 export default class Text extends Object3D {
-    constructor(text: string, size: number, isLabel = false) {
+    constructor(text: string, size: number) {
         super();
         const _text = new TroikaText();
         _text.text = text;
-        if (isLabel) _text.font = UbuntuMono;
-        else _text.font = fonts[Math.floor(Math.random() * fonts.length)];
+        _text.font = fonts[Math.floor(Math.random() * fonts.length)];
         _text.fontSize = size;
         _text.anchorX = 'center';
         _text.anchorY = 'middle';
@@ -30,7 +29,6 @@ export default class Text extends Object3D {
 
     static preloadFonts() {
         return new Promise((resolve, _reject) => {
-            // preloadFont({ font: UbuntuMono }, () => {});
             let done = 0;
             fonts.forEach(font => {
                 preloadFont({

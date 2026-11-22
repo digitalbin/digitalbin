@@ -1,11 +1,11 @@
-import { Mesh, BoxBufferGeometry, MeshStandardMaterial, BackSide } from 'three';
+import { Mesh, BoxGeometry, MeshStandardMaterial, BackSide } from 'three';
 
 export default class Room extends Mesh {
     size = 50;
     height = this.size / 2;
     constructor() {
         super();
-        this.geometry = new BoxBufferGeometry(
+        this.geometry = new BoxGeometry(
             this.size,
             this.height,
             this.size,

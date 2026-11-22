@@ -1,3 +1,5 @@
+import { reducedMotion } from '@/utils';
+
 interface ExtText extends Text {
     __originalText: string;
 }
@@ -39,6 +41,7 @@ export default class TypeIt {
     };
 
     start = async () => {
+        if (reducedMotion) return this.stop();
         window.addEventListener('click', this.stop, { once: true });
 
         for (const textBlock of this.textBlocks) {
@@ -52,7 +55,7 @@ export default class TypeIt {
     stop = () => {
         this.stopped = true;
         this.textBlocks.forEach((node) => {
-            node.style.visibility = 'visible';
+            if (node.style) node.style.visibility = 'visible';
             this.resetTextNodes(node);
         });
     }

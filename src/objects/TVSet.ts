@@ -1,6 +1,6 @@
 import { Group, Object3D, Vector3 } from 'three';
 import { GLTFItem, EjectButton } from '@/objects';
-import { CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer';
+import { CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
 
 export default class TVSet extends GLTFItem {
     public vcr: Object3D;
